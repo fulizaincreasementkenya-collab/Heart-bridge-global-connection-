@@ -1,3361 +1,959 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HeartBridge Global | Find Your Connection</title>
-
-<meta name="description" content="HeartBridge Global connects people across Kenya, Europe, USA, Canada, Switzerland and around the world. Discover compatible profiles and request a connection.">
-<meta name="theme-color" content="#6d28d9">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<style>
-:root{
-    --primary:#6d28d9;
-    --primary2:#9333ea;
-    --pink:#ec4899;
-    --pink2:#f472b6;
-    --dark:#111827;
-    --dark2:#1f2937;
-    --text:#273044;
-    --muted:#6b7280;
-    --light:#f7f7fb;
-    --white:#ffffff;
-    --border:#e5e7eb;
-    --green:#16a34a;
-    --whatsapp:#25D366;
-    --blue:#1877f2;
-    --shadow:0 15px 45px rgba(17,24,39,.10);
-    --radius:20px;
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Inter,Arial,sans-serif;
-    background:#f7f7fb;
-    color:var(--text);
-    line-height:1.6;
-}
-
-button,
-input,
-select,
-textarea{
-    font:inherit;
-}
-
-button{
-    cursor:pointer;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid var(--border);
-}
-
-.navbar{
-    max-width:1250px;
-    margin:auto;
-    padding:14px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:11px;
-    font-weight:900;
-    font-size:21px;
-}
-
-.logo-icon{
-    width:45px;
-    height:45px;
-    border-radius:14px;
-    background:linear-gradient(135deg,var(--primary),var(--pink));
-    color:white;
-    display:grid;
-    place-items:center;
-    box-shadow:0 8px 20px rgba(109,40,217,.25);
-}
-
-.logo span{
-    color:var(--primary);
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:26px;
-    font-weight:700;
-    font-size:14px;
-}
-
-.nav-links a:hover{
-    color:var(--primary);
-}
-
-.nav-actions{
-    display:flex;
-    gap:8px;
-}
-
-.icon-btn{
-    width:43px;
-    height:43px;
-    border-radius:50%;
-    border:1px solid var(--border);
-    background:white;
-    display:grid;
-    place-items:center;
-    color:var(--dark);
-    position:relative;
-}
-
-.icon-btn:hover{
-    background:#f4f0ff;
-    color:var(--primary);
-}
-
-.notification-dot{
-    position:absolute;
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:#ef4444;
-    top:7px;
-    right:7px;
-    border:2px solid white;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:650px;
-    display:flex;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-    color:white;
-    background:
-        linear-gradient(110deg,rgba(30,12,61,.94),rgba(109,40,217,.72),rgba(236,72,153,.60)),
-        url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
-}
-
-.hero-content{
-    width:min(1250px,92%);
-    margin:auto;
-    padding:80px 0;
-}
-
-.hero-text{
-    max-width:760px;
-}
-
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:9px 15px;
-    background:rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:999px;
-    font-weight:700;
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-family:"Playfair Display",serif;
-    font-size:clamp(44px,7vw,78px);
-    line-height:1.02;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
-    color:#ffd5eb;
-}
-
-.hero p{
-    font-size:19px;
-    max-width:690px;
-    color:#f5edff;
-}
-
-.hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:30px;
-}
-
-.btn{
-    border:none;
-    padding:14px 21px;
-    border-radius:13px;
-    font-weight:800;
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    gap:9px;
-    transition:.2s;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-.btn-primary{
-    background:white;
-    color:var(--primary);
-}
-
-.btn-purple{
-    background:var(--primary);
-    color:white;
-}
-
-.btn-pink{
-    background:var(--pink);
-    color:white;
-}
-
-.btn-green{
-    background:var(--whatsapp);
-    color:white;
-}
-
-.btn-dark{
-    background:var(--dark);
-    color:white;
-}
-
-.btn-outline{
-    border:1px solid var(--border);
-    background:white;
-    color:var(--dark);
-}
-
-.hero-stats{
-    display:flex;
-    flex-wrap:wrap;
-    gap:35px;
-    margin-top:42px;
-}
-
-.hero-stat strong{
-    display:block;
-    font-size:27px;
-}
-
-.hero-stat small{
-    color:#e9dff9;
-}
-
-/* =========================
-   COMMON
-========================= */
-
-.section{
-    padding:75px 20px;
-}
-
-.container{
-    max-width:1250px;
-    margin:auto;
-}
-
-.section-heading{
-    text-align:center;
-    margin-bottom:38px;
-}
-
-.section-heading h2{
-    font-family:"Playfair Display",serif;
-    color:var(--dark);
-    font-size:42px;
-    line-height:1.1;
-}
-
-.section-heading p{
-    color:var(--muted);
-    max-width:650px;
-    margin:10px auto 0;
-}
-
-/* =========================
-   HOW IT WORKS
-========================= */
-
-.steps{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.step{
-    background:white;
-    border:1px solid var(--border);
-    padding:28px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    position:relative;
-}
-
-.step-number{
-    width:43px;
-    height:43px;
-    border-radius:13px;
-    background:#f1eaff;
-    color:var(--primary);
-    display:grid;
-    place-items:center;
-    font-weight:900;
-    margin-bottom:18px;
-}
-
-.step h3{
-    margin-bottom:7px;
-    color:var(--dark);
-}
-
-/* =========================
-   MATCHING AREA
-========================= */
-
-.match-section{
-    background:white;
-}
-
-.filters{
-    display:grid;
-    grid-template-columns:1.2fr 1fr 1fr 1.2fr auto;
-    gap:12px;
-    margin-bottom:30px;
-}
-
-.input,
-.select{
-    width:100%;
-    border:1px solid var(--border);
-    background:#fff;
-    padding:13px 14px;
-    border-radius:12px;
-    outline:none;
-}
-
-.input:focus,
-.select:focus,
-textarea:focus{
-    border-color:var(--primary);
-    box-shadow:0 0 0 3px rgba(109,40,217,.08);
-}
-
-.profile-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.profile-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:21px;
-    overflow:hidden;
-    box-shadow:0 8px 30px rgba(17,24,39,.07);
-    transition:.25s;
-}
-
-.profile-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 18px 45px rgba(17,24,39,.13);
-}
-
-.profile-photo{
-    height:300px;
-    position:relative;
-    overflow:hidden;
-}
-
-.profile-photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.online{
-    position:absolute;
-    left:13px;
-    bottom:13px;
-    background:white;
-    color:#15803d;
-    padding:6px 10px;
-    border-radius:999px;
-    font-size:11px;
-    font-weight:800;
-}
-
-.online i{
-    font-size:8px;
-    margin-right:4px;
-}
-
-.profile-country{
-    position:absolute;
-    right:12px;
-    top:12px;
-    padding:7px 10px;
-    border-radius:999px;
-    background:rgba(0,0,0,.55);
-    color:white;
-    font-size:12px;
-    font-weight:800;
-}
-
-.profile-body{
-    padding:17px;
-}
-
-.profile-name{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-}
-
-.profile-name h3{
-    color:var(--dark);
-}
-
-.verified{
-    color:#2563eb;
-    font-size:14px;
-}
-
-.profile-role{
-    color:var(--primary);
-    font-weight:700;
-    font-size:13px;
-}
-
-.profile-bio{
-    color:var(--muted);
-    font-size:13px;
-    margin:9px 0;
-    min-height:62px;
-}
-
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-}
-
-.tag{
-    background:#f5f3ff;
-    color:#5b21b6;
-    padding:5px 8px;
-    border-radius:999px;
-    font-size:11px;
-    font-weight:700;
-}
-
-.profile-actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-    margin-top:14px;
-}
-
-.profile-actions button,
-.profile-actions a{
-    border:0;
-    padding:10px 8px;
-    border-radius:10px;
-    font-size:12px;
-    font-weight:800;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:5px;
-}
-
-.apply-btn{
-    background:linear-gradient(135deg,var(--primary),var(--pink));
-    color:white;
-}
-
-.whatsapp-btn{
-    background:#e9fff0;
-    color:#128c42;
-}
-
-/* =========================
-   ACTIVITY FEED
-========================= */
-
-.feed-section{
-    background:#f0f2f5;
-}
-
-.feed-layout{
-    display:grid;
-    grid-template-columns:1fr 350px;
-    gap:25px;
-}
-
-.post{
-    background:white;
-    border:1px solid #ddd;
-    border-radius:14px;
-    margin-bottom:18px;
-    overflow:hidden;
-}
-
-.post-head{
-    display:flex;
-    align-items:center;
-    gap:11px;
-    padding:15px;
-}
-
-.avatar{
-    width:43px;
-    height:43px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-.post-user{
-    flex:1;
-}
-
-.post-user strong{
-    color:#111827;
-}
-
-.post-time{
-    display:block;
-    color:#65676b;
-    font-size:12px;
-}
-
-.post-menu{
-    color:#65676b;
-}
-
-.post-text{
-    padding:0 15px 14px;
-    font-size:14px;
-}
-
-.post-image{
-    width:100%;
-    max-height:480px;
-    object-fit:cover;
-}
-
-.reaction-summary{
-    padding:10px 15px;
-    display:flex;
-    justify-content:space-between;
-    color:#65676b;
-    font-size:12px;
-}
-
-.reaction-buttons{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    border-top:1px solid #eee;
-    border-bottom:1px solid #eee;
-}
-
-.reaction-buttons button{
-    border:0;
-    background:white;
-    padding:11px;
-    color:#65676b;
-    font-weight:700;
-}
-
-.reaction-buttons button:hover,
-.reaction-buttons button.active{
-    color:var(--primary);
-    background:#faf8ff;
-}
-
-.comment-box{
-    display:flex;
-    gap:8px;
-    padding:12px;
-}
-
-.comment-box input{
-    flex:1;
-    border:0;
-    background:#f0f2f5;
-    border-radius:999px;
-    padding:10px 14px;
-    outline:none;
-}
-
-.comment-box button{
-    border:0;
-    background:var(--primary);
-    color:white;
-    width:38px;
-    height:38px;
-    border-radius:50%;
-}
-
-.comments{
-    padding:0 15px 13px;
-}
-
-.comment{
-    background:#f0f2f5;
-    display:inline-block;
-    padding:8px 12px;
-    border-radius:14px;
-    margin-top:5px;
-    font-size:12px;
-}
-
-/* =========================
-   NOTIFICATION PANEL
-========================= */
-
-.activity-box{
-    background:white;
-    border-radius:17px;
-    border:1px solid #ddd;
-    padding:18px;
-    height:max-content;
-    position:sticky;
-    top:90px;
-}
-
-.activity-box h3{
-    color:var(--dark);
-    margin-bottom:15px;
-}
-
-.activity-item{
-    display:flex;
-    gap:10px;
-    padding:12px 0;
-    border-bottom:1px solid #eee;
-}
-
-.activity-item:last-child{
-    border-bottom:0;
-}
-
-.activity-icon{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    background:#f1eaff;
-    color:var(--primary);
-    flex-shrink:0;
-}
-
-.activity-item p{
-    font-size:12px;
-    color:#4b5563;
-}
-
-.activity-item small{
-    color:#9ca3af;
-}
-
-/* =========================
-   TESTIMONIALS
-========================= */
-
-.testimonials{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.testimonial{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:22px;
-    box-shadow:0 7px 25px rgba(17,24,39,.05);
-}
-
-.testimonial-top{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.testimonial-avatar{
-    width:46px;
-    height:46px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-.testimonial-meta{
-    flex:1;
-}
-
-.testimonial-meta strong{
-    display:block;
-}
-
-.stars{
-    color:#f59e0b;
-    font-size:12px;
-}
-
-.testimonial p{
-    margin-top:15px;
-    color:#4b5563;
-    font-size:13px;
-}
-
-.testimonial-stats{
-    display:flex;
-    justify-content:space-between;
-    color:#8a8f98;
-    font-size:11px;
-    margin-top:16px;
-}
-
-/* =========================
-   COUNTRIES
-========================= */
-
-.country-grid{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:12px;
-}
-
-.country{
-    background:white;
-    border:1px solid var(--border);
-    padding:18px 10px;
-    text-align:center;
-    border-radius:15px;
-    transition:.2s;
-}
-
-.country:hover{
-    transform:translateY(-3px);
-    border-color:#c4b5fd;
-    box-shadow:var(--shadow);
-}
-
-.country .flag{
-    font-size:30px;
-    margin-bottom:6px;
-}
-
-.country strong{
-    display:block;
-    font-size:13px;
-}
-
-/* =========================
-   APPLICATION
-========================= */
-
-.application{
-    background:
-        linear-gradient(135deg,#1e1036,#6d28d9);
-    color:white;
-}
-
-.application-box{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    color:var(--text);
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 25px 70px rgba(0,0,0,.25);
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.form-group{
-    margin-bottom:15px;
-}
-
-.form-group.full{
-    grid-column:1/-1;
-}
-
-.form-group label{
-    display:block;
-    font-size:12px;
-    font-weight:800;
-    margin-bottom:6px;
-    color:#374151;
-}
-
-textarea{
-    width:100%;
-    min-height:120px;
-    border:1px solid var(--border);
-    padding:13px;
-    border-radius:12px;
-    resize:vertical;
-    outline:none;
-}
-
-.selected-match{
-    background:#f5f3ff;
-    border:1px solid #ddd6fe;
-    padding:12px;
-    border-radius:12px;
-    margin-bottom:17px;
-    display:none;
-}
-
-.selected-match strong{
-    color:var(--primary);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#111827;
-    color:#d1d5db;
-    padding:55px 20px 25px;
-}
-
-.footer-grid{
-    max-width:1250px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:30px;
-}
-
-.footer-brand{
-    max-width:360px;
-}
-
-.footer-brand h3{
-    color:white;
-    font-size:23px;
-    margin-bottom:10px;
-}
-
-.footer-col h4{
-    color:white;
-    margin-bottom:13px;
-}
-
-.footer-col a{
-    display:block;
-    color:#9ca3af;
-    font-size:13px;
-    margin:8px 0;
-}
-
-.footer-col a:hover{
-    color:white;
-}
-
-.footer-bottom{
-    max-width:1250px;
-    margin:35px auto 0;
-    border-top:1px solid #374151;
-    padding-top:20px;
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    flex-wrap:wrap;
-    font-size:12px;
-}
-
-/* =========================
-   FLOATING BUTTONS
-========================= */
-
-.floating{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    z-index:900;
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
-
-.float-btn{
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    color:white;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-
-.float-wa{
-    background:var(--whatsapp);
-}
-
-.float-phone{
-    background:var(--primary);
-}
-
-/* =========================
-   MODALS
-========================= */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:2000;
-    background:rgba(15,23,42,.72);
-    backdrop-filter:blur(5px);
-    align-items:center;
-    justify-content:center;
-    padding:18px;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-card{
-    background:white;
-    width:min(600px,100%);
-    max-height:92vh;
-    overflow:auto;
-    border-radius:23px;
-    padding:28px;
-    position:relative;
-}
-
-.close{
-    position:absolute;
-    right:16px;
-    top:14px;
-    border:0;
-    background:#f3f4f6;
-    width:38px;
-    height:38px;
-    border-radius:50%;
-}
-
-.success{
-    text-align:center;
-    padding:30px 10px;
-}
-
-.success-icon{
-    width:75px;
-    height:75px;
-    margin:auto;
-    border-radius:50%;
-    background:#dcfce7;
-    color:#16a34a;
-    display:grid;
-    place-items:center;
-    font-size:34px;
-}
-
-/* =========================
-   TOAST
-========================= */
-
-.toast{
-    position:fixed;
-    left:50%;
-    bottom:25px;
-    transform:translate(-50%,120px);
-    background:#111827;
-    color:white;
-    padding:13px 18px;
-    border-radius:12px;
-    z-index:5000;
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-    transition:.3s;
-    font-size:13px;
-    max-width:90%;
-}
-
-.toast.show{
-    transform:translate(-50%,0);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1050px){
-    .profile-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .steps{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .filters{
-        grid-template-columns:1fr 1fr 1fr;
-    }
-
-    .country-grid{
-        grid-template-columns:repeat(4,1fr);
-    }
-}
-
-@media(max-width:800px){
-    .nav-links{
-        display:none;
-    }
-
-    .hero{
-        min-height:600px;
-    }
-
-    .profile-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .feed-layout{
-        grid-template-columns:1fr;
-    }
-
-    .activity-box{
-        position:static;
-    }
-
-    .testimonials{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:560px){
-    .section{
-        padding:55px 14px;
-    }
-
-    .hero-content{
-        width:92%;
-    }
-
-    .hero h1{
-        font-size:45px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .hero-actions{
-        display:grid;
-        grid-template-columns:1fr;
-    }
-
-    .hero-actions .btn{
-        width:100%;
-    }
-
-    .steps,
-    .profile-grid,
-    .testimonials{
-        grid-template-columns:1fr;
-    }
-
-    .filters{
-        grid-template-columns:1fr;
-    }
-
-    .country-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .form-group.full{
-        grid-column:auto;
-    }
-
-    .application-box{
-        padding:20px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
-<nav class="navbar">
-
-    <a href="#" class="logo">
-        <div class="logo-icon">
-            <i class="fa-solid fa-heart"></i>
-        </div>
-        <div>
-            Heart<span>Bridge</span>
-            <small style="display:block;font-size:9px;letter-spacing:2px;color:#6b7280;">
-                GLOBAL CONNECTIONS
-            </small>
-        </div>
-    </a>
-
-    <div class="nav-links">
-        <a href="#matches">Matches</a>
-        <a href="#activities">Activities</a>
-        <a href="#stories">Stories</a>
-        <a href="#countries">Countries</a>
-        <a href="#how">How It Works</a>
-    </div>
-
-    <div class="nav-actions">
-        <button class="icon-btn" onclick="showNotifications()" title="Notifications">
-            <i class="fa-regular fa-bell"></i>
-            <span class="notification-dot"></span>
-        </button>
-
-        <button class="icon-btn" onclick="openApplication()" title="Apply">
-            <i class="fa-solid fa-user-plus"></i>
-        </button>
-    </div>
-
-</nav>
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-<div class="hero-content">
-
-    <div class="hero-text">
-
-        <div class="badge">
-            <i class="fa-solid fa-earth-africa"></i>
-            Connecting hearts across borders
-        </div>
-
-        <h1>
-            Your next <span>connection</span>
-            could be anywhere.
-        </h1>
-
-        <p>
-            Discover people from Kenya, Germany, Switzerland, USA,
-            Canada, Europe and beyond. Find someone whose interests,
-            personality and lifestyle connect with yours.
-        </p>
-
-        <div class="hero-actions">
-
-            <a href="#matches" class="btn btn-primary">
-                <i class="fa-solid fa-heart"></i>
-                Explore Matches
-            </a>
-
-            <button onclick="openApplication()" class="btn btn-pink">
-                <i class="fa-solid fa-paper-plane"></i>
-                Request a Connection
-            </button>
-
-        </div>
-
-        <div class="hero-stats">
-
-            <div class="hero-stat">
-                <strong>25K+</strong>
-                <small>Connections requested</small>
-            </div>
-
-            <div class="hero-stat">
-                <strong>40+</strong>
-                <small>Countries</small>
-            </div>
-
-            <div class="hero-stat">
-                <strong>500+</strong>
-                <small>Community stories</small>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     HOW IT WORKS
-========================= -->
-
-<section class="section" id="how">
-
-<div class="container">
-
-<div class="section-heading">
-    <h2>How HeartBridge Works</h2>
-    <p>
-        Simple, personal and straightforward. Find a profile,
-        choose your connection and send your application.
-    </p>
-</div>
-
-<div class="steps">
-
-    <div class="step">
-        <div class="step-number">01</div>
-        <h3>Explore Profiles</h3>
-        <p>
-            Browse profiles according to country, gender,
-            interests and lifestyle.
-        </p>
-    </div>
-
-    <div class="step">
-        <div class="step-number">02</div>
-        <h3>Choose Your Match</h3>
-        <p>
-            Find someone whose interests and personality
-            feel compatible with yours.
-        </p>
-    </div>
-
-    <div class="step">
-        <div class="step-number">03</div>
-        <h3>Send Application</h3>
-        <p>
-            Complete the short connection application
-            with your preferred details.
-        </p>
-    </div>
-
-    <div class="step">
-        <div class="step-number">04</div>
-        <h3>Connection Assistance</h3>
-        <p>
-            Your request is sent directly to our WhatsApp
-            connection desk for follow-up.
-        </p>
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     MATCHES
-========================= -->
-
-<section class="section match-section" id="matches">
-
-<div class="container">
-
-<div class="section-heading">
-    <h2>Discover Your Match</h2>
-    <p>
-        Browse different personalities, countries and interests.
-    </p>
-</div>
-
-<div class="filters">
-
-    <input
-        id="searchInput"
-        class="input"
-        type="search"
-        placeholder="Search name, interest or profession..."
-        oninput="filterProfiles()"
-    >
-
-    <select id="countryFilter" class="select" onchange="filterProfiles()">
-        <option value="">All countries</option>
-        <option>Kenya</option>
-        <option>Germany</option>
-        <option>Switzerland</option>
-        <option>USA</option>
-        <option>Canada</option>
-        <option>United Kingdom</option>
-        <option>France</option>
-        <option>Italy</option>
-        <option>Netherlands</option>
-        <option>Sweden</option>
-        <option>Norway</option>
-        <option>Australia</option>
-        <option>Belgium</option>
-        <option>United Arab Emirates</option>
-    </select>
-
-    <select id="genderFilter" class="select" onchange="filterProfiles()">
-        <option value="">All genders</option>
-        <option>Female</option>
-        <option>Male</option>
-    </select>
-
-    <select id="interestFilter" class="select" onchange="filterProfiles()">
-        <option value="">All interests</option>
-        <option>Cooking</option>
-        <option>Travel</option>
-        <option>Business</option>
-        <option>Fitness</option>
-        <option>Music</option>
-        <option>Photography</option>
-        <option>Hiking</option>
-        <option>Art</option>
-        <option>Fashion</option>
-        <option>Technology</option>
-    </select>
-
-    <button class="btn btn-purple" onclick="clearFilters()">
-        <i class="fa-solid fa-rotate-left"></i>
-        Reset
-    </button>
-
-</div>
-
-<div id="profileGrid" class="profile-grid"></div>
-
-<div id="noProfiles"
-style="display:none;text-align:center;padding:40px;color:#6b7280;">
-    <i class="fa-regular fa-face-frown"
-       style="font-size:40px;color:#c4b5fd;"></i>
-    <h3 style="margin-top:10px;">No profiles found</h3>
-    <p>Try another country, gender or interest.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     ACTIVITY FEED
-========================= -->
-
-<section class="section feed-section" id="activities">
-
-<div class="container">
-
-<div class="section-heading">
-    <h2>Community Activity</h2>
-    <p>
-        See what people in the HeartBridge community are sharing.
-    </p>
-</div>
-
-<div class="feed-layout">
-
-<div id="feed"></div>
-
-<aside class="activity-box">
-
-    <h3>
-        <i class="fa-regular fa-bell"></i>
-        Recent Activity
-    </h3>
-
-    <div id="activityList"></div>
-
-</aside>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     COMMUNITY STORIES
-========================= -->
-
-<section class="section" id="stories">
-
-<div class="container">
-
-<div class="section-heading">
-
-    <div class="badge"
-         style="background:#f1eaff;color:#6d28d9;border:0;">
-        <i class="fa-solid fa-comments"></i>
-        Community stories
-    </div>
-
-    <h2>What People Are Sharing</h2>
-
-    <p>
-        A collection of community-style stories and reactions.
-        Verified customer stories can be added by the administrator.
-    </p>
-
-</div>
-
-<div id="testimonialGrid" class="testimonials"></div>
-
-<div style="text-align:center;margin-top:25px;">
-    <button class="btn btn-purple" onclick="loadMoreTestimonials()">
-        <i class="fa-solid fa-plus"></i>
-        Load More Stories
-    </button>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     COUNTRIES
-========================= -->
-
-<section class="section" id="countries"
-style="background:#fff;">
-
-<div class="container">
-
-<div class="section-heading">
-    <h2>Connections Around The World</h2>
-    <p>
-        Explore people from different countries and cultures.
-    </p>
-</div>
-
-<div class="country-grid">
-
-    <div class="country">
-        <div class="flag">🇰🇪</div>
-        <strong>Kenya</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇩🇪</div>
-        <strong>Germany</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇨🇭</div>
-        <strong>Switzerland</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇺🇸</div>
-        <strong>USA</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇨🇦</div>
-        <strong>Canada</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇬🇧</div>
-        <strong>United Kingdom</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇫🇷</div>
-        <strong>France</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇮🇹</div>
-        <strong>Italy</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇳🇱</div>
-        <strong>Netherlands</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇸🇪</div>
-        <strong>Sweden</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇳🇴</div>
-        <strong>Norway</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇦🇺</div>
-        <strong>Australia</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇧🇪</div>
-        <strong>Belgium</strong>
-    </div>
-
-    <div class="country">
-        <div class="flag">🇦🇪</div>
-        <strong>UAE</strong>
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     APPLICATION
-========================= -->
-
-<section class="section application" id="application">
-
-<div class="container">
-
-<div class="section-heading" style="color:white;">
-    <h2 style="color:white;">Request Your Connection</h2>
-    <p style="color:#e9d5ff;">
-        Tell us what kind of connection you are looking for.
-        Your application will open WhatsApp directly.
-    </p>
-</div>
-
-<div class="application-box">
-
-    <div id="selectedMatch" class="selected-match">
-        <i class="fa-solid fa-heart"></i>
-        Selected profile:
-        <strong id="selectedMatchName"></strong>
-    </div>
-
-    <form id="applicationForm">
-
-        <div class="form-grid">
-
-            <div class="form-group">
-                <label>Your full name</label>
-                <input
-                    id="clientName"
-                    class="input"
-                    required
-                    placeholder="Enter your name"
-                >
-            </div>
-
-            <div class="form-group">
-                <label>Your age</label>
-                <input
-                    id="clientAge"
-                    class="input"
-                    type="number"
-                    min="18"
-                    required
-                    placeholder="18+"
-                >
-            </div>
-
-            <div class="form-group">
-                <label>Your gender</label>
-                <select id="clientGender" class="select" required>
-                    <option value="">Select gender</option>
-                    <option>Female</option>
-                    <option>Male</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Your country</label>
-                <select id="clientCountry" class="select" required>
-                    <option value="">Select country</option>
-                    <option>Kenya</option>
-                    <option>Germany</option>
-                    <option>Switzerland</option>
-                    <option>USA</option>
-                    <option>Canada</option>
-                    <option>United Kingdom</option>
-                    <option>France</option>
-                    <option>Italy</option>
-                    <option>Netherlands</option>
-                    <option>Sweden</option>
-                    <option>Norway</option>
-                    <option>Australia</option>
-                    <option>Belgium</option>
-                    <option>United Arab Emirates</option>
-                    <option>Other</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Preferred gender</label>
-                <select id="preferredGender" class="select" required>
-                    <option value="">Select</option>
-                    <option>Female</option>
-                    <option>Male</option>
-                    <option>Either</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Preferred country</label>
-                <select id="preferredCountry" class="select">
-                    <option value="">Any country</option>
-                    <option>Kenya</option>
-                    <option>Germany</option>
-                    <option>Switzerland</option>
-                    <option>USA</option>
-                    <option>Canada</option>
-                    <option>United Kingdom</option>
-                    <option>France</option>
-                    <option>Italy</option>
-                    <option>Netherlands</option>
-                    <option>Sweden</option>
-                    <option>Norway</option>
-                    <option>Australia</option>
-                    <option>Belgium</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Your WhatsApp / phone</label>
-                <input
-                    id="clientPhone"
-                    class="input"
-                    required
-                    placeholder="+254..."
-                >
-            </div>
-
-            <div class="form-group">
-                <label>Relationship intention</label>
-                <select id="intention" class="select" required>
-                    <option value="">Select</option>
-                    <option>Serious relationship</option>
-                    <option>Friendship first</option>
-                    <option>Marriage-minded</option>
-                    <option>International connection</option>
-                    <option>Still exploring</option>
-                </select>
-            </div>
-
-            <div class="form-group full">
-                <label>Tell us about yourself / what you are looking for</label>
-
-                <textarea
-                    id="clientMessage"
-                    required
-                    placeholder="Example: I enjoy travelling, cooking and peaceful conversations. I would like to meet someone serious..."
-                ></textarea>
-            </div>
-
-        </div>
-
-        <button
-            type="submit"
-            class="btn btn-green"
-            style="width:100%;margin-top:5px;"
-        >
-            <i class="fa-brands fa-whatsapp"></i>
-            Submit Application on WhatsApp
-        </button>
-
-        <p style="font-size:11px;color:#6b7280;text-align:center;margin-top:10px;">
-            Your application opens WhatsApp and prepares a message for the
-            HeartBridge connection desk.
-        </p>
-
-    </form>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-<div class="footer-grid">
-
-    <div class="footer-brand">
-        <h3>
-            <i class="fa-solid fa-heart"></i>
-            HeartBridge Global
-        </h3>
-
-        <p>
-            Building meaningful connections across countries,
-            cultures and communities.
-        </p>
-
-        <div style="margin-top:17px;display:flex;gap:8px;">
-            <a href="https://wa.me/254758040809"
-               target="_blank"
-               class="icon-btn"
-               style="background:#25D366;color:white;border:0;">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-
-            <a href="tel:+254758040809"
-               class="icon-btn"
-               style="background:#6d28d9;color:white;border:0;">
-                <i class="fa-solid fa-phone"></i>
-            </a>
-        </div>
-    </div>
-
-    <div class="footer-col">
-        <h4>Discover</h4>
-        <a href="#matches">Browse Matches</a>
-        <a href="#countries">Countries</a>
-        <a href="#activities">Community</a>
-        <a href="#stories">Stories</a>
-    </div>
-
-    <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="#application">Request Connection</a>
-        <a href="https://wa.me/254758040809" target="_blank">
-            WhatsApp
-        </a>
-        <a href="tel:+254758040809">Call Us</a>
-    </div>
-
-    <div class="footer-col">
-        <h4>Information</h4>
-        <a href="#how">How It Works</a>
-        <a href="#">Privacy</a>
-        <a href="#">Safety</a>
-        <a href="#">Terms</a>
-    </div>
-
-</div>
-
-<div class="footer-bottom">
-    <span>
-        © <span id="year"></span> HeartBridge Global.
-        All rights reserved.
-    </span>
-
-    <span>
-        <i class="fa-solid fa-shield-heart"></i>
-        Connect respectfully. Stay safe.
-    </span>
-</div>
-
-</footer>
-
-
-<!-- =========================
-     FLOATING CONTACT BUTTONS
-========================= -->
-
-<div class="floating">
-
-    <a
-        class="float-btn float-wa"
-        href="https://wa.me/254758040809"
-        target="_blank"
-        title="WhatsApp HeartBridge"
-    >
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <a
-        class="float-btn float-phone"
-        href="tel:+254758040809"
-        onclick="tryTruecaller(event)"
-        title="Call HeartBridge"
-    >
-        <i class="fa-solid fa-phone"></i>
-    </a>
-
-</div>
-
-
-<!-- =========================
-     APPLICATION MODAL
-========================= -->
-
-<div id="applicationModal" class="modal">
-
-<div class="modal-card">
-
-<button class="close" onclick="closeApplication()">
-    <i class="fa-solid fa-xmark"></i>
-</button>
-
-<h2 style="margin-bottom:5px;">Request a Connection</h2>
-
-<p style="color:#6b7280;font-size:13px;margin-bottom:20px;">
-    Select a profile and complete your details.
-</p>
-
-<form id="modalForm">
-
-    <div class="form-group">
-        <label>Your name</label>
-        <input id="modalName" class="input" required>
-    </div>
-
-    <div class="form-group">
-        <label>Your WhatsApp / phone</label>
-        <input id="modalPhone" class="input" required>
-    </div>
-
-    <div class="form-group">
-        <label>Country</label>
-        <select id="modalCountry" class="select" required>
-            <option value="">Select country</option>
-            <option>Kenya</option>
-            <option>Germany</option>
-            <option>Switzerland</option>
-            <option>USA</option>
-            <option>Canada</option>
-            <option>United Kingdom</option>
-            <option>France</option>
-            <option>Italy</option>
-            <option>Netherlands</option>
-            <option>Sweden</option>
-            <option>Norway</option>
-            <option>Australia</option>
-            <option>Belgium</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label>Message</label>
-        <textarea
-            id="modalMessage"
-            required
-            placeholder="Tell us what you are looking for..."
-        ></textarea>
-    </div>
-
-    <button class="btn btn-green" style="width:100%;">
-        <i class="fa-brands fa-whatsapp"></i>
-        Continue to WhatsApp
-    </button>
-
-</form>
-
-</div>
-</div>
-
-
-<!-- =========================
-     SUCCESS MODAL
-========================= -->
-
-<div id="successModal" class="modal">
-
-<div class="modal-card">
-
-<button class="close" onclick="closeSuccess()">
-    <i class="fa-solid fa-xmark"></i>
-</button>
-
-<div class="success">
-
-    <div class="success-icon">
-        <i class="fa-solid fa-check"></i>
-    </div>
-
-    <h2 style="margin-top:18px;">
-        Application Ready ❤️
-    </h2>
-
-    <p id="successText"
-       style="color:#6b7280;margin:10px 0 20px;">
-        Your application has been prepared for WhatsApp.
-    </p>
-
-    <button class="btn btn-green"
-            onclick="openWhatsAppFromSuccess()">
-        <i class="fa-brands fa-whatsapp"></i>
-        Open WhatsApp
-    </button>
-
-</div>
-
-</div>
-</div>
-
-
-<!-- =========================
-     NOTIFICATION MODAL
-========================= -->
-
-<div id="notificationModal" class="modal">
-
-<div class="modal-card">
-
-<button class="close" onclick="closeNotifications()">
-    <i class="fa-solid fa-xmark"></i>
-</button>
-
-<h2>
-    <i class="fa-regular fa-bell"></i>
-    Notifications
-</h2>
-
-<div id="modalNotifications"
-     style="margin-top:15px;"></div>
-
-</div>
-</div>
-
-
-<div id="toast" class="toast"></div>
-
-
 <script>
-
-/* =========================================================
+/* ============================================================
    HEARTBRIDGE GLOBAL
+   REAL PEOPLE. MEANINGFUL CONNECTIONS.
+   
+   PROFILE IMAGE + PROFILE DATA SYSTEM
+   ============================================================ */
+
+/*
+  IMPORTANT:
+  - Use only AI-generated images, user-owned images, or properly
+    licensed images approved for use on this dating website.
+  - Do NOT use random Google Images of identifiable people.
+  - Do NOT use celebrities, influencers, politicians, minors,
+    explicit images, or images with unknown licensing.
+  - Every image must belong to exactly ONE profile.
+  - Never randomly assign images after profiles are created.
+*/
+
+
+/* ============================================================
    PROFILE DATABASE
-========================================================= */
+   ============================================================ */
 
 const profiles = [
 
-{
-    id:1,
-    name:"Lena",
-    age:29,
-    gender:"Female",
-    country:"Germany",
-    flag:"🇩🇪",
-    role:"Architect",
-    interests:["Travel","Art","Cooking"],
-    bio:"I enjoy beautiful architecture, weekend travel and experimenting with new recipes.",
-    photo:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85"
-},
+  {
+    profile_id: "HBG-0001",
+    name: "Marcus",
+    gender: "Male",
+    age: 48,
+    location: "Kenya",
+    country: "Kenya",
 
-{
-    id:2,
-    name:"Daniel",
-    age:34,
-    gender:"Male",
-    country:"Kenya",
-    flag:"🇰🇪",
-    role:"Business Consultant",
-    interests:["Business","Travel","Fitness"],
-    bio:"Ambitious, family-oriented and happiest when discovering new places and building something meaningful.",
-    photo:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85"
-},
+    bio:
+      "A calm and ambitious professional who enjoys meaningful conversations, travel, good food and building a peaceful future with the right person.",
 
-{
-    id:3,
-    name:"Sophia",
-    age:27,
-    gender:"Female",
-    country:"Switzerland",
-    flag:"🇨🇭",
-    role:"Photographer",
-    interests:["Photography","Hiking","Travel"],
-    bio:"Nature, photography and quiet mountain mornings are my kind of happiness.",
-    photo:"https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85"
-},
+    interests: [
+      "Business",
+      "Travel",
+      "Fitness",
+      "Cooking"
+    ],
 
-{
-    id:4,
-    name:"Michael",
-    age:31,
-    gender:"Male",
-    country:"USA",
-    flag:"🇺🇸",
-    role:"Software Engineer",
-    interests:["Technology","Music","Travel"],
-    bio:"Tech professional who loves live music, road trips and meaningful conversations.",
-    photo:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=85"
-},
+    relationship_goal: "Serious Relationship",
 
-{
-    id:5,
-    name:"Emma",
-    age:30,
-    gender:"Female",
-    country:"Canada",
-    flag:"🇨🇦",
-    role:"Chef",
-    interests:["Cooking","Travel","Fitness"],
-    bio:"Food is my love language. I enjoy cooking, exploring restaurants and staying active.",
-    photo:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=85"
-},
+    image_url:
+      "assets/profiles/HBG-0001.webp",
 
-{
-    id:6,
-    name:"Lucas",
-    age:36,
-    gender:"Male",
-    country:"France",
-    flag:"🇫🇷",
-    role:"Entrepreneur",
-    interests:["Business","Art","Travel"],
-    bio:"Entrepreneur with a creative side. I love museums, good food and spontaneous trips.",
-    photo:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=85"
-},
+    image_source:
+      "AI-generated project asset",
 
-{
-    id:7,
-    name:"Amelia",
-    age:28,
-    gender:"Female",
-    country:"United Kingdom",
-    flag:"🇬🇧",
-    role:"Fashion Designer",
-    interests:["Fashion","Art","Music"],
-    bio:"Creative soul who loves design, music and finding beauty in everyday life.",
-    photo:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=85"
-},
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
 
-{
-    id:8,
-    name:"Noah",
-    age:33,
-    gender:"Male",
-    country:"Netherlands",
-    flag:"🇳🇱",
-    role:"Fitness Coach",
-    interests:["Fitness","Hiking","Travel"],
-    bio:"Outdoor person, fitness lover and serious believer in keeping life positive.",
-    photo:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=85"
-},
 
-{
-    id:9,
-    name:"Clara",
-    age:32,
-    gender:"Female",
-    country:"Italy",
-    flag:"🇮🇹",
-    role:"Interior Designer",
-    interests:["Art","Cooking","Travel"],
-    bio:"I love interiors, Italian cooking and travelling to places with beautiful stories.",
-    photo:"https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=85"
-},
+  {
+    profile_id: "HBG-0002",
+    name: "Amina",
+    gender: "Female",
+    age: 31,
+    location: "Kenya",
+    country: "Kenya",
 
-{
-    id:10,
-    name:"Ethan",
-    age:35,
-    gender:"Male",
-    country:"Australia",
-    flag:"🇦🇺",
-    role:"Photographer",
-    interests:["Photography","Travel","Hiking"],
-    bio:"Camera in one hand, hiking boots on the other. Always looking for the next adventure.",
-    photo:"https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=85"
-},
+    bio:
+      "A warm and creative woman who loves cooking, discovering new places and enjoying simple moments with someone genuine.",
 
-{
-    id:11,
-    name:"Nadia",
-    age:26,
-    gender:"Female",
-    country:"Sweden",
-    flag:"🇸🇪",
-    role:"Marketing Specialist",
-    interests:["Travel","Music","Fashion"],
-    bio:"Outgoing, curious and always ready for a new city, new song or new idea.",
-    photo:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
-},
+    interests: [
+      "Cooking",
+      "Travel",
+      "Music",
+      "Family"
+    ],
 
-{
-    id:12,
-    name:"Oliver",
-    age:38,
-    gender:"Male",
-    country:"Norway",
-    flag:"🇳🇴",
-    role:"Marine Engineer",
-    interests:["Hiking","Travel","Photography"],
-    bio:"Calm personality who enjoys mountains, photography and peaceful weekends.",
-    photo:"https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=900&q=85"
-},
+    relationship_goal: "Long-Term Relationship",
 
-{
-    id:13,
-    name:"Grace",
-    age:30,
-    gender:"Female",
-    country:"Kenya",
-    flag:"🇰🇪",
-    role:"Teacher",
-    interests:["Cooking","Music","Travel"],
-    bio:"Warm-hearted, cheerful and happiest around good food, music and family.",
-    photo:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
-},
+    image_url:
+      "assets/profiles/HBG-0002.webp",
 
-{
-    id:14,
-    name:"James",
-    age:40,
-    gender:"Male",
-    country:"Canada",
-    flag:"🇨🇦",
-    role:"Financial Advisor",
-    interests:["Business","Fitness","Travel"],
-    bio:"Focused professionally but relaxed personally. Looking for something genuine and lasting.",
-    photo:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=85"
-},
+    image_source:
+      "AI-generated project asset",
 
-{
-    id:15,
-    name:"Mia",
-    age:29,
-    gender:"Female",
-    country:"USA",
-    flag:"🇺🇸",
-    role:"Music Producer",
-    interests:["Music","Art","Travel"],
-    bio:"Music is my world. I love concerts, creative projects and exploring new cultures.",
-    photo:"https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=85"
-},
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
 
-{
-    id:16,
-    name:"Leon",
-    age:37,
-    gender:"Male",
-    country:"Germany",
-    flag:"🇩🇪",
-    role:"Mechanical Engineer",
-    interests:["Technology","Hiking","Cooking"],
-    bio:"Engineer by profession, outdoor enthusiast by choice. I also enjoy cooking on weekends.",
-    photo:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=85"
-},
 
-{
-    id:17,
-    name:"Sophie",
-    age:31,
-    gender:"Female",
-    country:"Belgium",
-    flag:"🇧🇪",
-    role:"Graphic Designer",
-    interests:["Art","Photography","Fashion"],
-    bio:"Creative, independent and always searching for inspiring places and people.",
-    photo:"https://images.unsplash.com/photo-1517365830460-955ce3ccd263?auto=format&fit=crop&w=900&q=85"
-},
+  {
+    profile_id: "HBG-0003",
+    name: "Daniel",
+    gender: "Male",
+    age: 36,
+    location: "South Africa",
+    country: "South Africa",
 
-{
-    id:18,
-    name:"Adam",
-    age:34,
-    gender:"Male",
-    country:"Switzerland",
-    flag:"🇨🇭",
-    role:"Doctor",
-    interests:["Fitness","Travel","Music"],
-    bio:"Busy career, calm personality and a big appreciation for music, fitness and travel.",
-    photo:"https://images.unsplash.com/photo-1507591064344-4c6ce005b128?auto=format&fit=crop&w=900&q=85"
-}
+    bio:
+      "Active, positive and adventurous. I enjoy cycling, exploring beautiful places and meeting people who value honesty and respect.",
+
+    interests: [
+      "Cycling",
+      "Adventure",
+      "Fitness",
+      "Travel"
+    ],
+
+    relationship_goal: "Serious Relationship",
+
+    image_url:
+      "assets/profiles/HBG-0003.webp",
+
+    image_source:
+      "AI-generated project asset",
+
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
+
+
+  {
+    profile_id: "HBG-0004",
+    name: "Maryam",
+    gender: "Female",
+    age: 45,
+    location: "United Arab Emirates",
+    country: "UAE",
+
+    bio:
+      "Thoughtful, mature and family-oriented. I enjoy reading, learning new things and having peaceful conversations with someone sincere.",
+
+    interests: [
+      "Reading",
+      "Culture",
+      "Travel",
+      "Family"
+    ],
+
+    relationship_goal: "Marriage",
+
+    image_url:
+      "assets/profiles/HBG-0004.webp",
+
+    image_source:
+      "AI-generated project asset",
+
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
+
+
+  {
+    profile_id: "HBG-0005",
+    name: "Ethan",
+    gender: "Male",
+    age: 39,
+    location: "Canada",
+    country: "Canada",
+
+    bio:
+      "An outdoors person who enjoys hiking, photography and discovering places away from the busy city. Looking for something genuine.",
+
+    interests: [
+      "Hiking",
+      "Photography",
+      "Nature",
+      "Travel"
+    ],
+
+    relationship_goal: "Long-Term Relationship",
+
+    image_url:
+      "assets/profiles/HBG-0005.webp",
+
+    image_source:
+      "AI-generated project asset",
+
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
+
+
+  {
+    profile_id: "HBG-0006",
+    name: "Samuel",
+    gender: "Male",
+    age: 52,
+    location: "Kenya",
+    country: "Kenya",
+
+    bio:
+      "Mature, hardworking and peaceful. I appreciate nature, gardening, family time and building a stable future together.",
+
+    interests: [
+      "Gardening",
+      "Nature",
+      "Family",
+      "Business"
+    ],
+
+    relationship_goal: "Marriage",
+
+    image_url:
+      "assets/profiles/HBG-0006.webp",
+
+    image_source:
+      "AI-generated project asset",
+
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
+
+
+  {
+    profile_id: "HBG-0007",
+    name: "Kenji",
+    gender: "Male",
+    age: 28,
+    location: "Japan",
+    country: "Japan",
+
+    bio:
+      "Creative and easygoing musician who enjoys guitar, good conversations, travel and discovering new cultures.",
+
+    interests: [
+      "Music",
+      "Guitar",
+      "Travel",
+      "Photography"
+    ],
+
+    relationship_goal: "Long-Term Relationship",
+
+    image_url:
+      "assets/profiles/HBG-0007.webp",
+
+    image_source:
+      "AI-generated project asset",
+
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
+
+
+  {
+    profile_id: "HBG-0008",
+    name: "Naomi",
+    gender: "Female",
+    age: 29,
+    location: "Ghana",
+    country: "Ghana",
+
+    bio:
+      "Friendly, ambitious and positive. I enjoy coffee dates, creative projects, music and meeting people with good hearts.",
+
+    interests: [
+      "Marketing",
+      "Music",
+      "Travel",
+      "Coffee"
+    ],
+
+    relationship_goal: "Serious Relationship",
+
+    image_url:
+      "assets/profiles/HBG-0008.webp",
+
+    image_source:
+      "AI-generated project asset",
+
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
+
+
+  {
+    profile_id: "HBG-0009",
+    name: "David",
+    gender: "Male",
+    age: 46,
+    location: "United Arab Emirates",
+    country: "UAE",
+
+    bio:
+      "Disciplined and health-conscious with a passion for fitness, travel and personal growth. Looking for a mature and genuine connection.",
+
+    interests: [
+      "Fitness",
+      "Travel",
+      "Health",
+      "Business"
+    ],
+
+    relationship_goal: "Serious Relationship",
+
+    image_url:
+      "assets/profiles/HBG-0009.webp",
+
+    image_source:
+      "AI-generated project asset",
+
+    image_license:
+      "Approved HeartBridge Global project asset"
+  },
+
+
+  {
+    profile_id: "HBG-0010",
+    name: "Brian",
+    gender: "Male",
+    age: 33,
+    location: "United States",
+    country: "USA",
+
+    bio:
+      "Energetic, friendly and focused. I enjoy training, exploring new restaurants and spending time with people who bring positive energy.",
+
+    interests: [
+      "Fitness",
+      "Food",
+      "Travel",
+      "Sports"
+    ],
+
+    relationship_goal: "Long-Term Relationship",
+
+    image_url:
+      "assets/profiles/HBG-0010.webp",
+
+    image_source:
+      "AI-generated project asset",
+
+    image_license:
+      "Approved HeartBridge Global project asset"
+  }
 
 ];
 
 
-/* =========================================================
-   RENDER PROFILES
-========================================================= */
+/* ============================================================
+   PROFILE VALIDATION SYSTEM
+   ============================================================ */
 
-function renderProfiles(list = profiles){
+function validateProfiles(profileList) {
 
-    const grid = document.getElementById("profileGrid");
-    const noProfiles = document.getElementById("noProfiles");
+  const errors = [];
 
-    grid.innerHTML = "";
+  const ids = new Set();
+  const names = new Set();
+  const images = new Set();
 
-    if(!list.length){
-        noProfiles.style.display = "block";
-        return;
-    }
+  profileList.forEach((profile, index) => {
 
-    noProfiles.style.display = "none";
+    const position = index + 1;
 
-    list.forEach(profile => {
+    /* -------------------------------
+       Required fields
+    -------------------------------- */
 
-        const card = document.createElement("article");
+    const requiredFields = [
+      "profile_id",
+      "name",
+      "gender",
+      "age",
+      "location",
+      "bio",
+      "interests",
+      "relationship_goal",
+      "image_url"
+    ];
 
-        card.className = "profile-card";
+    requiredFields.forEach(field => {
 
-        card.innerHTML = `
+      if (
+        profile[field] === undefined ||
+        profile[field] === null ||
+        profile[field] === ""
+      ) {
 
-            <div class="profile-photo">
-
-                <img
-                    src="${profile.photo}"
-                    alt="${profile.name} profile"
-                    loading="lazy"
-                >
-
-                <span class="profile-country">
-                    ${profile.flag} ${profile.country}
-                </span>
-
-                <span class="online">
-                    <i class="fa-solid fa-circle"></i>
-                    Available
-                </span>
-
-            </div>
-
-            <div class="profile-body">
-
-                <div class="profile-name">
-
-                    <h3>
-                        ${profile.name}, ${profile.age}
-                        <i class="fa-solid fa-circle-check verified"></i>
-                    </h3>
-
-                </div>
-
-                <div class="profile-role">
-                    ${profile.role}
-                </div>
-
-                <p class="profile-bio">
-                    ${profile.bio}
-                </p>
-
-                <div class="tags">
-
-                    ${profile.interests.map(
-                        interest => `<span class="tag">${interest}</span>`
-                    ).join("")}
-
-                </div>
-
-                <div class="profile-actions">
-
-                    <button
-                        class="apply-btn"
-                        onclick="selectProfile(${profile.id})"
-                    >
-                        <i class="fa-solid fa-heart"></i>
-                        Connect
-                    </button>
-
-                    <a
-                        class="whatsapp-btn"
-                        href="https://wa.me/254758040809"
-                        target="_blank"
-                        title="Chat with HeartBridge"
-                    >
-                        <i class="fa-brands fa-whatsapp"></i>
-                        WhatsApp
-                    </a>
-
-                </div>
-
-            </div>
-        `;
-
-        grid.appendChild(card);
-
-    });
-
-}
-
-
-/* =========================================================
-   FILTER PROFILES
-========================================================= */
-
-function filterProfiles(){
-
-    const search =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
-
-    const country =
-        document.getElementById("countryFilter").value;
-
-    const gender =
-        document.getElementById("genderFilter").value;
-
-    const interest =
-        document.getElementById("interestFilter").value;
-
-    const filtered = profiles.filter(profile => {
-
-        const searchable =
-            `${profile.name}
-             ${profile.role}
-             ${profile.country}
-             ${profile.bio}
-             ${profile.interests.join(" ")}`
-            .toLowerCase();
-
-        const matchesSearch =
-            !search || searchable.includes(search);
-
-        const matchesCountry =
-            !country || profile.country === country;
-
-        const matchesGender =
-            !gender || profile.gender === gender;
-
-        const matchesInterest =
-            !interest || profile.interests.includes(interest);
-
-        return (
-            matchesSearch &&
-            matchesCountry &&
-            matchesGender &&
-            matchesInterest
+        errors.push(
+          `Profile ${position}: Missing ${field}`
         );
 
-    });
-
-    renderProfiles(filtered);
-}
-
-
-function clearFilters(){
-
-    document.getElementById("searchInput").value = "";
-    document.getElementById("countryFilter").value = "";
-    document.getElementById("genderFilter").value = "";
-    document.getElementById("interestFilter").value = "";
-
-    renderProfiles();
-}
-
-
-/* =========================================================
-   SELECT PROFILE
-========================================================= */
-
-let selectedProfile = null;
-let lastWhatsAppMessage = "";
-
-function selectProfile(id){
-
-    selectedProfile =
-        profiles.find(profile => profile.id === id);
-
-    if(!selectedProfile) return;
-
-    document.getElementById("selectedMatch").style.display = "block";
-
-    document.getElementById("selectedMatchName").textContent =
-        `${selectedProfile.name}, ${selectedProfile.age} — ${selectedProfile.country}`;
-
-    document.getElementById("application")
-        .scrollIntoView({behavior:"smooth"});
-
-    showToast(
-        `${selectedProfile.name} selected ❤️ Complete your application below.`
-    );
-}
-
-
-/* =========================================================
-   APPLICATION
-========================================================= */
-
-function openApplication(){
-
-    document
-        .getElementById("applicationModal")
-        .classList.add("show");
-
-}
-
-
-function closeApplication(){
-
-    document
-        .getElementById("applicationModal")
-        .classList.remove("show");
-
-}
-
-
-document
-.getElementById("applicationForm")
-.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    sendApplication({
-
-        name:document.getElementById("clientName").value,
-        age:document.getElementById("clientAge").value,
-        gender:document.getElementById("clientGender").value,
-        country:document.getElementById("clientCountry").value,
-        preferredGender:document.getElementById("preferredGender").value,
-        preferredCountry:document.getElementById("preferredCountry").value,
-        phone:document.getElementById("clientPhone").value,
-        intention:document.getElementById("intention").value,
-        message:document.getElementById("clientMessage").value
+      }
 
     });
 
-});
 
+    /* -------------------------------
+       Profile ID duplicate check
+    -------------------------------- */
 
-document
-.getElementById("modalForm")
-.addEventListener("submit", function(event){
+    if (ids.has(profile.profile_id)) {
 
-    event.preventDefault();
-
-    sendApplication({
-
-        name:document.getElementById("modalName").value,
-        age:"Not provided",
-        gender:"Not provided",
-        country:document.getElementById("modalCountry").value,
-        preferredGender:"Not specified",
-        preferredCountry:selectedProfile
-            ? selectedProfile.country
-            : "Not specified",
-        phone:document.getElementById("modalPhone").value,
-        intention:"Connection request",
-        message:document.getElementById("modalMessage").value
-
-    });
-
-});
-
-
-function sendApplication(data){
-
-    if(!data.name || !data.phone || !data.message){
-
-        showToast("Please complete all required fields.");
-
-        return;
-    }
-
-    const selectedText = selectedProfile
-        ? `${selectedProfile.name}, ${selectedProfile.age} — ${selectedProfile.country}`
-        : "No specific profile selected";
-
-    const message = `
-
-❤️ HEARTBRIDGE GLOBAL — CONNECTION APPLICATION
-
-👤 CLIENT DETAILS
-Name: ${data.name}
-Age: ${data.age}
-Gender: ${data.gender}
-Country: ${data.country}
-Phone / WhatsApp: ${data.phone}
-
-💞 CONNECTION PREFERENCE
-Preferred Gender: ${data.preferredGender}
-Preferred Country: ${data.preferredCountry}
-Intention: ${data.intention}
-
-❤️ SELECTED PROFILE
-${selectedText}
-
-📝 ABOUT / REQUEST
-${data.message}
-
-📅 Submitted: ${new Date().toLocaleString()}
-
-Please assist me with this connection request.
-
-Thank you.
-HeartBridge Global
-`;
-
-    lastWhatsAppMessage = message;
-
-    document.getElementById("successText").innerHTML =
-        `Jambo <strong>${escapeHTML(data.name)}</strong> ❤️
-        your application has been prepared successfully.
-        Tap below to open WhatsApp and send it to the
-        HeartBridge connection desk.`;
-
-    document
-        .getElementById("successModal")
-        .classList.add("show");
-
-}
-
-
-function openWhatsAppFromSuccess(){
-
-    const url =
-        "https://wa.me/254758040809?text=" +
-        encodeURIComponent(lastWhatsAppMessage);
-
-    window.open(url, "_blank");
-
-    closeSuccess();
-
-}
-
-
-function closeSuccess(){
-
-    document
-        .getElementById("successModal")
-        .classList.remove("show");
-
-}
-
-
-/* =========================================================
-   TRUECALLER / PHONE
-========================================================= */
-
-function tryTruecaller(event){
-
-    /*
-      Truecaller URI is attempted first.
-      If the app does not handle it, the browser falls back
-      to the normal telephone dialer.
-    */
-
-    event.preventDefault();
-
-    const number = "+254758040809";
-
-    const fallback = () => {
-
-        window.location.href =
-            "tel:" + number;
-
-    };
-
-    let fallbackTimer =
-        setTimeout(fallback, 900);
-
-    try{
-
-        window.location.href =
-            "truecaller://call?number=" +
-            encodeURIComponent(number);
-
-    }catch(error){
-
-        clearTimeout(fallbackTimer);
-
-        fallback();
+      errors.push(
+        `Duplicate profile ID: ${profile.profile_id}`
+      );
 
     }
 
-}
+    ids.add(profile.profile_id);
 
 
-/* =========================================================
-   FACEBOOK-STYLE FEED
-========================================================= */
+    /* -------------------------------
+       Name duplicate check
+    -------------------------------- */
 
-const feedPosts = [
+    const normalizedName =
+      profile.name.trim().toLowerCase();
 
-{
-    name:"Emma",
-    country:"Canada",
-    time:"3 minutes ago",
-    avatar:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80",
-    text:"I just discovered how much I enjoy cooking for people I care about. ❤️🍝",
-    image:"https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=85",
-    likes:2700,
-    comments:["That food looks amazing 😍"]
-},
+    if (names.has(normalizedName)) {
 
-{
-    name:"Noah",
-    country:"Netherlands",
-    time:"12 minutes ago",
-    avatar:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80",
-    text:"Weekend hiking is better when you have someone who enjoys the same views. 🏔️❤️",
-    image:"https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=85",
-    likes:4800,
-    comments:["Beautiful view! 🔥"]
-},
-
-{
-    name:"Mia",
-    country:"USA",
-    time:"27 minutes ago",
-    avatar:"https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=200&q=80",
-    text:"Music, coffee and a peaceful morning. Sometimes the simple things win. ☕🎶",
-    image:"https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=85",
-    likes:6900,
-    comments:["This is such a vibe ❤️"]
-},
-
-{
-    name:"Daniel",
-    country:"Kenya",
-    time:"41 minutes ago",
-    avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
-    text:"A good connection starts with a good conversation. Never underestimate kindness. 🙏❤️",
-    image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85",
-    likes:5300,
-    comments:["Well said 👏"]
-}
-
-];
-
-
-function renderFeed(){
-
-    const feed = document.getElementById("feed");
-
-    feed.innerHTML = "";
-
-    feedPosts.forEach((post,index)=>{
-
-        const article = document.createElement("article");
-
-        article.className = "post";
-
-        article.innerHTML = `
-
-            <div class="post-head">
-
-                <img
-                    class="avatar"
-                    src="${post.avatar}"
-                    alt="${post.name}"
-                >
-
-                <div class="post-user">
-                    <strong>
-                        ${post.name}
-                        <i class="fa-solid fa-circle-check"
-                           style="color:#1877f2;font-size:11px;"></i>
-                    </strong>
-
-                    <span class="post-time">
-                        ${post.time} · 🌍 ${post.country}
-                    </span>
-                </div>
-
-                <div class="post-menu">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </div>
-
-            </div>
-
-            <div class="post-text">
-                ${post.text}
-            </div>
-
-            <img
-                class="post-image"
-                src="${post.image}"
-                alt="Community activity"
-                loading="lazy"
-            >
-
-            <div class="reaction-summary">
-
-                <span id="likeCount-${index}">
-                    <span style="color:#1877f2;">👍</span>
-                    <span style="color:#ef4444;">❤️</span>
-                    ${formatNumber(post.likes)}
-                </span>
-
-                <span>
-                    ${post.comments.length + 18} comments
-                </span>
-
-            </div>
-
-            <div class="reaction-buttons">
-
-                <button onclick="reactToPost(${index},this)">
-                    <i class="fa-regular fa-thumbs-up"></i>
-                    Like
-                </button>
-
-                <button onclick="reactToPost(${index},this)">
-                    <i class="fa-regular fa-heart"></i>
-                    Love
-                </button>
-
-                <button onclick="focusComment(${index})">
-                    <i class="fa-regular fa-comment"></i>
-                    Comment
-                </button>
-
-            </div>
-
-            <div class="comments" id="comments-${index}">
-
-                ${post.comments.map(comment =>
-                    `<div class="comment">${comment}</div>`
-                ).join("<br>")}
-
-            </div>
-
-            <div class="comment-box">
-
-                <input
-                    id="comment-${index}"
-                    placeholder="Write a comment..."
-                    onkeydown="commentEnter(event,${index})"
-                >
-
-                <button onclick="addComment(${index})">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-
-            </div>
-
-        `;
-
-        feed.appendChild(article);
-
-    });
-
-}
-
-
-function reactToPost(index,button){
-
-    if(button.classList.contains("active")){
-
-        button.classList.remove("active");
-
-        feedPosts[index].likes--;
-
-    }else{
-
-        button.classList.add("active");
-
-        feedPosts[index].likes++;
-
-        showToast("Reaction added ❤️");
+      errors.push(
+        `Duplicate profile name: ${profile.name}`
+      );
 
     }
 
-    document.getElementById(`likeCount-${index}`)
-        .innerHTML =
-        `<span style="color:#1877f2;">👍</span>
-         <span style="color:#ef4444;">❤️</span>
-         ${formatNumber(feedPosts[index].likes)}`;
-
-}
+    names.add(normalizedName);
 
 
-function focusComment(index){
+    /* -------------------------------
+       Image duplicate check
+    -------------------------------- */
 
-    document
-        .getElementById(`comment-${index}`)
-        .focus();
+    if (images.has(profile.image_url)) {
 
-}
-
-
-function commentEnter(event,index){
-
-    if(event.key === "Enter"){
-
-        event.preventDefault();
-
-        addComment(index);
+      errors.push(
+        `Duplicate image URL: ${profile.image_url}`
+      );
 
     }
 
-}
+    images.add(profile.image_url);
 
 
-function addComment(index){
+    /* -------------------------------
+       Adult age check
+    -------------------------------- */
 
-    const input =
-        document.getElementById(`comment-${index}`);
+    if (
+      typeof profile.age !== "number" ||
+      profile.age < 18
+    ) {
 
-    const value = input.value.trim();
-
-    if(!value) return;
-
-    feedPosts[index].comments.push(value);
-
-    const comments =
-        document.getElementById(`comments-${index}`);
-
-    const comment =
-        document.createElement("div");
-
-    comment.className = "comment";
-
-    comment.textContent = value;
-
-    comments.appendChild(document.createElement("br"));
-    comments.appendChild(comment);
-
-    input.value = "";
-
-    showToast("Comment posted ❤️");
-
-}
-
-
-/* =========================================================
-   TESTIMONIAL SYSTEM
-========================================================= */
-
-const testimonialNames = [
-    "Aisha","Brian","Clara","David","Esther",
-    "Felix","Grace","Hannah","Ian","Julia",
-    "Kevin","Lydia","Mark","Nadia","Oliver",
-    "Patricia","Ryan","Sarah","Thomas","Wendy"
-];
-
-const testimonialCountries = [
-    "Kenya",
-    "Germany",
-    "Canada",
-    "USA",
-    "Switzerland",
-    "France",
-    "United Kingdom",
-    "Netherlands",
-    "Italy",
-    "Australia"
-];
-
-const testimonialStories = [
-
-    "We connected through the platform and started with simple conversations. One year later, we are expecting a baby 😅🥰❤️",
-
-    "I honestly joined just to see what would happen. I never expected to meet someone who understood my personality so well. ❤️",
-
-    "The best thing was finding someone who enjoys travelling as much as I do. Our first trip together was unforgettable. ✈️🥰",
-
-    "We started talking about food because we both love cooking. Somehow those conversations became something much deeper. 😂❤️",
-
-    "Different countries, different cultures, but somehow the same sense of humour. I still laugh about our first conversation. 😅",
-
-    "I was nervous about international connections, but our conversations became natural very quickly. 🌍❤️",
-
-    "We started as friends and took our time. That patience made the connection feel even more special. 🥰",
-
-    "I found someone who loves hiking almost as much as I do. Now our weekend plans are completely different. 🏔️❤️",
-
-    "The funny part is that we both thought the other person would never reply. Look at us now 😂❤️",
-
-    "Distance looked huge on the map until we started talking every day. ❤️🌍",
-
-    "We discovered that we both love music, cooking and late-night conversations. What a combination! 🎶🍝😂",
-
-    "I was looking for someone serious and patient. The connection I found surprised me in the best way. ❤️",
-
-    "Our first conversation lasted much longer than planned. We completely lost track of time. 😅🥰",
-
-    "Sometimes the person you are looking for is simply living in another country. 🌍❤️",
-
-    "We started with friendship and somehow became each other's favourite person. 🥹❤️",
-
-    "I didn't expect the platform to introduce me to someone with exactly the same adventurous spirit. ✈️🥰",
-
-    "Our story began with a simple hello. Never underestimate a simple hello. ❤️",
-
-    "We both love peaceful mornings, coffee and travelling. Apparently that was enough to start something beautiful. ☕❤️",
-
-    "The connection felt easy from the beginning. No pressure, just genuine conversations. 🥰",
-
-    "We are still getting to know each other, but the smiles have definitely become more frequent. 😂❤️",
-
-    "I met someone who makes even ordinary conversations feel exciting. ❤️",
-
-    "My friends still tease me because I said I would only browse for five minutes. 😂",
-
-    "We discovered we have completely different backgrounds but surprisingly similar values. 🌍❤️",
-
-    "I finally met someone who understands why I take so many food photos. 😂🍰",
-
-    "Our first shared interest was photography. Now we have hundreds of pictures together. 📸❤️",
-
-    "I thought international dating would be complicated, but good communication makes a huge difference. ❤️",
-
-    "From strangers to daily conversations. Life can really surprise you. 🥰",
-
-    "We both believe laughter makes relationships stronger. We have definitely tested that theory. 😂❤️",
-
-    "The biggest surprise was discovering how comfortable the conversation felt from day one. ❤️",
-
-    "A connection doesn't always begin dramatically. Sometimes it begins with a simple question and a smile. 😊❤️"
-
-];
-
-let generatedTestimonials = [];
-
-function generateTestimonials(){
-
-    generatedTestimonials = [];
-
-    for(let i=0;i<550;i++){
-
-        const name =
-            testimonialNames[i % testimonialNames.length];
-
-        const country =
-            testimonialCountries[
-                (i * 3) % testimonialCountries.length
-            ];
-
-        const story =
-            testimonialStories[
-                i % testimonialStories.length
-            ];
-
-        const variations = [
-            "",
-            " Honestly, I didn't expect it.",
-            " And yes, I still smile about it. 😅",
-            " ❤️",
-            " We are taking it one day at a time.",
-            " What a beautiful surprise.",
-            " Never say never! 😂",
-            " I am grateful for the experience."
-        ];
-
-        const variation =
-            variations[i % variations.length];
-
-        generatedTestimonials.push({
-
-            name,
-            country,
-            story:story + variation,
-
-            likes:
-                120 +
-                ((i * 317) % 6880),
-
-            time:
-                i < 10
-                    ? `${i + 2} minutes ago`
-                    : `${(i % 28) + 1} days ago`,
-
-            avatar:
-                profiles[i % profiles.length].photo
-
-        });
+      errors.push(
+        `${profile.name}: Profile must be an adult aged 18+`
+      );
 
     }
 
-}
 
+    /* -------------------------------
+       Gender validation
+    -------------------------------- */
 
-let testimonialVisible = 6;
+    const allowedGenders = [
+      "Male",
+      "Female"
+    ];
 
+    if (!allowedGenders.includes(profile.gender)) {
 
-function renderTestimonials(){
-
-    const grid =
-        document.getElementById("testimonialGrid");
-
-    grid.innerHTML = "";
-
-    generatedTestimonials
-        .slice(0,testimonialVisible)
-        .forEach((item,index)=>{
-
-            const card =
-                document.createElement("article");
-
-            card.className = "testimonial";
-
-            card.innerHTML = `
-
-                <div class="testimonial-top">
-
-                    <img
-                        class="testimonial-avatar"
-                        src="${item.avatar}"
-                        alt="${item.name}"
-                    >
-
-                    <div class="testimonial-meta">
-
-                        <strong>
-                            ${item.name}
-                            <i class="fa-solid fa-circle-check"
-                               style="color:#1877f2;font-size:11px;"></i>
-                        </strong>
-
-                        <span style="font-size:11px;color:#777;">
-                            ${item.country} · ${item.time}
-                        </span>
-
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <p>
-                    “${item.story}”
-                </p>
-
-                <div class="testimonial-stats">
-
-                    <span>
-                        <i class="fa-solid fa-heart"
-                           style="color:#ef4444;"></i>
-                        ${formatNumber(item.likes)} likes
-                    </span>
-
-                    <span>
-                        ${index + 2} replies
-                    </span>
-
-                </div>
-
-            `;
-
-            grid.appendChild(card);
-
-        });
-
-}
-
-
-function loadMoreTestimonials(){
-
-    testimonialVisible += 6;
-
-    if(testimonialVisible >= generatedTestimonials.length){
-
-        testimonialVisible =
-            generatedTestimonials.length;
-
-        showToast("You've reached the end of the stories.");
-
-    }else{
-
-        showToast("More community stories loaded ❤️");
+      errors.push(
+        `${profile.name}: Invalid gender`
+      );
 
     }
 
-    renderTestimonials();
 
-}
+    /* -------------------------------
+       Bio validation
+    -------------------------------- */
 
+    if (
+      typeof profile.bio !== "string" ||
+      profile.bio.length < 20
+    ) {
 
-/* =========================================================
-   NOTIFICATIONS
-========================================================= */
-
-const notifications = [
-
-    {
-        icon:"fa-heart",
-        text:"Someone from Germany received a new connection request.",
-        time:"Just now"
-    },
-
-    {
-        icon:"fa-user-plus",
-        text:"A new member from Kenya joined the community.",
-        time:"2 minutes ago"
-    },
-
-    {
-        icon:"fa-comment",
-        text:"A community member received a new comment.",
-        time:"5 minutes ago"
-    },
-
-    {
-        icon:"fa-earth-africa",
-        text:"New international connections are being requested.",
-        time:"8 minutes ago"
-    },
-
-    {
-        icon:"fa-heart-circle-check",
-        text:"A profile received multiple connection interests.",
-        time:"12 minutes ago"
-    }
-
-];
-
-
-function renderNotifications(){
-
-    const list =
-        document.getElementById("activityList");
-
-    const modal =
-        document.getElementById("modalNotifications");
-
-    const html =
-        notifications.map(item => `
-
-            <div class="activity-item">
-
-                <div class="activity-icon">
-                    <i class="fa-solid ${item.icon}"></i>
-                </div>
-
-                <div>
-                    <p>${item.text}</p>
-                    <small>${item.time}</small>
-                </div>
-
-            </div>
-
-        `).join("");
-
-    list.innerHTML = html;
-
-    modal.innerHTML = html;
-
-}
-
-
-function showNotifications(){
-
-    document
-        .getElementById("notificationModal")
-        .classList.add("show");
-
-}
-
-
-function closeNotifications(){
-
-    document
-        .getElementById("notificationModal")
-        .classList.remove("show");
-
-}
-
-
-/* =========================================================
-   LIVE NOTIFICATION ROTATION
-========================================================= */
-
-const liveNotifications = [
-
-    "A new connection request was started ❤️",
-
-    "Someone is exploring profiles from Germany 🇩🇪",
-
-    "A member from Kenya just viewed international matches 🇰🇪",
-
-    "New activity has been posted in the community 🌍",
-
-    "Someone just reacted to a community story ❤️",
-
-    "A new profile is now available to explore ✨",
-
-    "Someone from Canada is searching for a connection 🇨🇦",
-
-    "A member from Switzerland just joined the activity feed 🇨🇭"
-
-];
-
-let notificationIndex = 0;
-
-
-setInterval(()=>{
-
-    notificationIndex++;
-
-    const message =
-        liveNotifications[
-            notificationIndex %
-            liveNotifications.length
-        ];
-
-    showToast(
-        `<i class="fa-regular fa-bell"></i> ${message}`
-    );
-
-},15000);
-
-
-/* =========================================================
-   UTILITIES
-========================================================= */
-
-function formatNumber(number){
-
-    if(number >= 1000){
-
-        return (
-            number / 1000
-        ).toFixed(
-            number >= 10000 ? 0 : 1
-        ) + "K";
+      errors.push(
+        `${profile.name}: Bio is too short`
+      );
 
     }
 
-    return number;
+
+    /* -------------------------------
+       Interests validation
+    -------------------------------- */
+
+    if (
+      !Array.isArray(profile.interests) ||
+      profile.interests.length === 0
+    ) {
+
+      errors.push(
+        `${profile.name}: Missing interests`
+      );
+
+    }
+
+  });
+
+
+  return {
+    valid: errors.length === 0,
+    errors
+  };
 
 }
 
 
-function showToast(message){
+/* ============================================================
+   RUN VALIDATION
+   ============================================================ */
 
-    const toast =
-        document.getElementById("toast");
+const profileValidation =
+  validateProfiles(profiles);
 
-    toast.innerHTML = message;
+if (!profileValidation.valid) {
 
-    toast.classList.add("show");
+  console.error(
+    "HEARTBRIDGE PROFILE VALIDATION FAILED:"
+  );
 
-    clearTimeout(window.toastTimer);
+  profileValidation.errors.forEach(error => {
+    console.error("❌", error);
+  });
 
-    window.toastTimer =
-        setTimeout(()=>{
+} else {
 
-            toast.classList.remove("show");
+  console.log(
+    `✅ HeartBridge profile database validated successfully.`
+  );
 
-        },3500);
-
-}
-
-
-function escapeHTML(value){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = value;
-
-    return div.innerHTML;
+  console.log(
+    `✅ ${profiles.length} unique profiles loaded.`
+  );
 
 }
 
 
-/* =========================================================
-   CLOSE MODALS WHEN CLICKING OUTSIDE
-========================================================= */
+/* ============================================================
+   PROFILE CARD GENERATOR
+   ============================================================ */
 
-document.querySelectorAll(".modal")
-.forEach(modal=>{
+function createProfileCard(profile) {
 
-    modal.addEventListener("click",function(event){
+  const card = document.createElement("article");
 
-        if(event.target === modal){
+  card.className = "profile-card";
 
-            modal.classList.remove("show");
+  card.dataset.profileId =
+    profile.profile_id;
 
+  card.dataset.gender =
+    profile.gender;
+
+  card.dataset.country =
+    profile.country;
+
+  card.dataset.age =
+    profile.age;
+
+
+  card.innerHTML = `
+
+    <div class="profile-image-wrapper">
+
+      <img
+        src="${profile.image_url}"
+        alt="${profile.name}, ${profile.age}, ${profile.gender}"
+        class="profile-image"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='assets/profile-placeholder.webp';"
+      >
+
+    </div>
+
+    <div class="profile-content">
+
+      <h3>
+        ${escapeHTML(profile.name)},
+        ${profile.age}
+      </h3>
+
+      <p class="profile-location">
+        📍 ${escapeHTML(profile.location)}
+      </p>
+
+      <p class="profile-gender">
+        ${escapeHTML(profile.gender)}
+      </p>
+
+      <p class="profile-bio">
+        ${escapeHTML(profile.bio)}
+      </p>
+
+      <div class="profile-interests">
+
+        ${
+          profile.interests
+            .map(
+              interest =>
+                `<span>${escapeHTML(interest)}</span>`
+            )
+            .join("")
         }
 
-    });
+      </div>
 
-});
+      <div class="profile-goal">
+
+        ${escapeHTML(profile.relationship_goal)}
+
+      </div>
+
+      <button
+        class="connect-button"
+        onclick="openApplication('${profile.profile_id}')"
+      >
+        Connect With ${escapeHTML(profile.name)}
+      </button>
+
+    </div>
+
+  `;
+
+  return card;
+}
 
 
-/* =========================================================
-   INITIALISE
-========================================================= */
+/* ============================================================
+   RENDER PROFILES
+   ============================================================ */
 
-document.getElementById("year")
-    .textContent = new Date().getFullYear();
+function renderProfiles(profileList = profiles) {
 
-generateTestimonials();
+  const container =
+    document.getElementById("profilesGrid");
 
-renderProfiles();
+  if (!container) return;
 
-renderFeed();
+  container.innerHTML = "";
 
-renderTestimonials();
+  profileList.forEach(profile => {
 
-renderNotifications();
-
-
-/* =========================================================
-   DEMO WELCOME
-========================================================= */
-
-setTimeout(()=>{
-
-    showToast(
-        "❤️ Welcome to HeartBridge Global — discover your connection."
+    container.appendChild(
+      createProfileCard(profile)
     );
 
-},2500);
+  });
 
+}
+
+
+/* ============================================================
+   SAFE TEXT HANDLING
+   ============================================================ */
+
+function escapeHTML(value) {
+
+  return String(value)
+
+    .replace(/&/g, "&amp;")
+
+    .replace(/</g, "&lt;")
+
+    .replace(/>/g, "&gt;")
+
+    .replace(/"/g, "&quot;")
+
+    .replace(/'/g, "&#039;");
+}
+
+
+/* ============================================================
+   PROFILE SEARCH / FILTER
+   ============================================================ */
+
+function filterProfiles({
+
+  search = "",
+  gender = "",
+  country = "",
+  minAge = 18,
+  maxAge = 100
+
+} = {}) {
+
+  const searchText =
+    search.trim().toLowerCase();
+
+
+  return profiles.filter(profile => {
+
+    const matchesSearch =
+
+      !searchText ||
+
+      profile.name
+        .toLowerCase()
+        .includes(searchText) ||
+
+      profile.location
+        .toLowerCase()
+        .includes(searchText) ||
+
+      profile.bio
+        .toLowerCase()
+        .includes(searchText) ||
+
+      profile.interests.some(
+        interest =>
+          interest
+            .toLowerCase()
+            .includes(searchText)
+      );
+
+
+    const matchesGender =
+
+      !gender ||
+      profile.gender === gender;
+
+
+    const matchesCountry =
+
+      !country ||
+      profile.country === country;
+
+
+    const matchesAge =
+
+      profile.age >= minAge &&
+      profile.age <= maxAge;
+
+
+    return (
+
+      matchesSearch &&
+      matchesGender &&
+      matchesCountry &&
+      matchesAge
+
+    );
+
+  });
+
+}
+
+
+/* ============================================================
+   APPLICATION SYSTEM
+   ============================================================ */
+
+function openApplication(profileId) {
+
+  const selectedProfile =
+    profiles.find(
+      profile =>
+        profile.profile_id === profileId
+    );
+
+
+  if (!selectedProfile) {
+
+    console.error(
+      "Profile not found:",
+      profileId
+    );
+
+    return;
+
+  }
+
+
+  console.log(
+    "Selected profile:",
+    selectedProfile
+  );
+
+
+  /*
+    Your application modal can now use:
+
+    selectedProfile.profile_id
+    selectedProfile.name
+    selectedProfile.gender
+    selectedProfile.age
+    selectedProfile.location
+    selectedProfile.image_url
+    selectedProfile.relationship_goal
+  */
+
+
+  const message =
+
+    `Hello HeartBridge Global,
+
+I am interested in connecting with:
+
+Name: ${selectedProfile.name}
+Profile ID: ${selectedProfile.profile_id}
+Age: ${selectedProfile.age}
+Gender: ${selectedProfile.gender}
+Location: ${selectedProfile.location}
+Relationship Goal: ${selectedProfile.relationship_goal}
+
+I would like to know more about this connection.`;
+
+  
+  const whatsappNumber =
+    "254758040809";
+
+
+  const whatsappURL =
+
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
+
+}
+
+
+/* ============================================================
+   IMAGE INTEGRITY CHECK
+   ============================================================ */
+
+function checkImageIntegrity() {
+
+  const imageMap = new Map();
+
+  profiles.forEach(profile => {
+
+    if (imageMap.has(profile.image_url)) {
+
+      console.error(
+        "❌ IMAGE REUSED:",
+        profile.image_url,
+        "used by:",
+        imageMap.get(profile.image_url),
+        "and",
+        profile.profile_id
+      );
+
+    } else {
+
+      imageMap.set(
+        profile.image_url,
+        profile.profile_id
+      );
+
+    }
+
+  });
+
+}
+
+
+/* ============================================================
+   GENDER / PROFILE CONSISTENCY CHECK
+   ============================================================ */
+
+function checkProfileConsistency() {
+
+  profiles.forEach(profile => {
+
+    if (
+      !profile.profile_id ||
+      !profile.name ||
+      !profile.image_url ||
+      !profile.gender ||
+      !profile.bio
+    ) {
+
+      console.error(
+        "❌ Incomplete profile:",
+        profile
+      );
+
+    }
+
+  });
+
+}
+
+
+/* ============================================================
+   START WEBSITE
+   ============================================================ */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    renderProfiles();
+
+    checkImageIntegrity();
+
+    checkProfileConsistency();
+
+  }
+);
+
+
+/* ============================================================
+   FUTURE PROFILE EXPANSION
+   ============================================================ */
+
+/*
+  TARGET:
+
+  300 MEN
+  200 WOMEN
+  = 500 UNIQUE HUMAN PROFILES
+
+
+  Every future profile must follow exactly
+  the same structure:
+
+  {
+    profile_id: "HBG-XXXX",
+    name: "...",
+    gender: "Male" / "Female",
+    age: 18+,
+    location: "...",
+    country: "...",
+    bio: "...",
+    interests: [...],
+    relationship_goal: "...",
+    image_url: "assets/profiles/HBG-XXXX.webp",
+    image_source: "...",
+    image_license: "..."
+  }
+
+
+  IMAGE RULE:
+
+  HBG-0001 → HBG-0001.webp
+  HBG-0002 → HBG-0002.webp
+  HBG-0003 → HBG-0003.webp
+
+  NEVER:
+
+  HBG-0001 → HBG-0002.webp
+  HBG-0002 → HBG-0001.webp
+
+
+  Once an image has been assigned to a profile,
+  that image must NEVER be assigned to another profile.
+*/
 </script>
-
-</body>
-</html>
