@@ -1,748 +1,3123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HeartBridge Global | Real People. Meaningful Connections.</title>
+
+  <meta name="description"
+        content="HeartBridge Global helps adults discover meaningful connections across Kenya, Africa, Europe, North America and beyond.">
+
+  <meta name="theme-color" content="#071a2f">
+
+  <style>
+    :root{
+      --navy:#071a2f;
+      --navy2:#0d2945;
+      --navy3:#123d63;
+      --gold:#e9b84b;
+      --gold2:#ffd878;
+      --cream:#fffaf0;
+      --white:#ffffff;
+      --text:#172235;
+      --muted:#687386;
+      --line:#e6eaf0;
+      --soft:#f5f7fa;
+      --green:#17b26a;
+      --whatsapp:#25d366;
+      --danger:#d92d20;
+      --shadow:0 18px 50px rgba(7,26,47,.10);
+      --radius:22px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#fff;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    button,
+    input,
+    select,
+    textarea{
+      font:inherit;
+    }
+
+    button{
+      cursor:pointer;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(1200px,92%);
+      margin:auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      color:var(--navy);
+      letter-spacing:-.5px;
+    }
+
+    .brand-mark{
+      width:46px;
+      height:46px;
+      border-radius:15px;
+      background:linear-gradient(135deg,var(--navy),var(--navy3));
+      display:grid;
+      place-items:center;
+      color:var(--gold2);
+      font-size:23px;
+      box-shadow:0 10px 25px rgba(7,26,47,.18);
+      overflow:hidden;
+    }
+
+    .brand-mark img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .brand-text strong{
+      display:block;
+      font-size:18px;
+    }
+
+    .brand-text span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.4px;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    nav a{
+      font-size:14px;
+      font-weight:700;
+      color:#394559;
+    }
+
+    nav a:hover{
+      color:var(--navy3);
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:9px;
+    }
+
+    .btn{
+      border:0;
+      border-radius:13px;
+      padding:12px 17px;
+      font-weight:800;
+      transition:.2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:var(--navy);
+      color:white;
+    }
+
+    .btn-gold{
+      background:var(--gold);
+      color:var(--navy);
+    }
+
+    .btn-outline{
+      background:white;
+      border:1px solid var(--line);
+      color:var(--navy);
+    }
+
+    .btn-whatsapp{
+      background:var(--whatsapp);
+      color:white;
+    }
+
+    .btn-danger{
+      background:#fff0ef;
+      color:var(--danger);
+    }
+
+    .menu-btn{
+      display:none;
+      border:0;
+      background:var(--soft);
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      font-size:21px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:650px;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 85% 20%,rgba(233,184,75,.20),transparent 30%),
+        linear-gradient(135deg,#061426,#0d2c4b 55%,#123d63);
+      color:white;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(5,17,31,.88),rgba(5,17,31,.56),rgba(5,17,31,.2));
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(780px,92%);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.15);
+      color:var(--gold2);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.5px;
+      margin-bottom:20px;
+    }
+
+    .hero h1{
+      font-size:clamp(40px,6vw,76px);
+      line-height:1.02;
+      letter-spacing:-3px;
+      max-width:800px;
+      margin-bottom:22px;
+    }
+
+    .hero h1 span{
+      color:var(--gold2);
+    }
+
+    .hero p{
+      max-width:680px;
+      font-size:18px;
+      color:rgba(255,255,255,.82);
+      margin-bottom:30px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .hero-note{
+      margin-top:22px;
+      font-size:12px;
+      color:rgba(255,255,255,.62);
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section{
+      padding:88px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 42px;
+    }
+
+    .section-head .eyebrow{
+      background:#fff7e4;
+      color:#9b6d09;
+      border:1px solid #f4dfa7;
+      margin-bottom:14px;
+    }
+
+    .section-head h2{
+      color:var(--navy);
+      font-size:clamp(30px,4vw,46px);
+      line-height:1.1;
+      letter-spacing:-1.7px;
+      margin-bottom:12px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+    }
+
+    /* ================= STEPS ================= */
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .step{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:27px;
+      box-shadow:var(--shadow);
+    }
+
+    .step-number{
+      width:45px;
+      height:45px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:#fff6dc;
+      color:#9b6d09;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    .step h3{
+      margin-bottom:7px;
+      color:var(--navy);
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* ================= MATCHING ================= */
+
+    .matching{
+      background:var(--soft);
+    }
+
+    .filters{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+      gap:12px;
+      margin-bottom:30px;
+    }
+
+    .field{
+      position:relative;
+    }
+
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:13px 14px;
+      outline:none;
+      background:white;
+      color:var(--text);
+    }
+
+    .field textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus{
+      border-color:#9db5cc;
+      box-shadow:0 0 0 4px rgba(18,61,99,.07);
+    }
+
+    .results-bar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:18px;
+      gap:15px;
+    }
+
+    .results-count{
+      font-weight:900;
+      color:var(--navy);
+    }
+
+    .profiles-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .profile-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 12px 35px rgba(7,26,47,.07);
+      transition:.25s ease;
+    }
+
+    .profile-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 45px rgba(7,26,47,.12);
+    }
+
+    .profile-photo{
+      height:330px;
+      background:linear-gradient(135deg,#dfe7ee,#f8fafc);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .profile-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .profile-top{
+      position:absolute;
+      top:14px;
+      left:14px;
+      right:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      z-index:2;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      border-radius:999px;
+      padding:7px 10px;
+      font-size:11px;
+      font-weight:900;
+      background:rgba(255,255,255,.94);
+      color:var(--navy);
+      box-shadow:0 7px 20px rgba(0,0,0,.08);
+    }
+
+    .badge.demo{
+      color:#8b6206;
+      background:#fff7df;
+    }
+
+    .badge.age{
+      color:#344054;
+    }
+
+    .profile-body{
+      padding:21px;
+    }
+
+    .profile-name{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:5px;
+    }
+
+    .profile-name h3{
+      font-size:21px;
+      color:var(--navy);
+    }
+
+    .profile-location{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:12px;
+    }
+
+    .profile-bio{
+      font-size:14px;
+      color:#566174;
+      margin-bottom:14px;
+    }
+
+    .goal{
+      display:inline-flex;
+      padding:7px 10px;
+      border-radius:10px;
+      background:#f3f7fb;
+      color:var(--navy3);
+      font-size:11px;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:17px;
+    }
+
+    .chip{
+      padding:5px 9px;
+      border-radius:999px;
+      background:#f4f6f8;
+      color:#596579;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .profile-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+
+    /* ================= COMMUNITY ================= */
+
+    .community{
+      background:white;
+    }
+
+    .feed{
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:25px;
+    }
+
+    .feed-column{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .post{
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:21px;
+      background:white;
+      box-shadow:0 10px 30px rgba(7,26,47,.05);
+    }
+
+    .post-head{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      margin-bottom:15px;
+    }
+
+    .avatar{
+      width:45px;
+      height:45px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--navy),var(--navy3));
+      color:white;
+      font-weight:900;
+      flex:none;
+    }
+
+    .post-author strong{
+      display:block;
+      font-size:14px;
+    }
+
+    .post-author span{
+      display:block;
+      color:#8791a1;
+      font-size:11px;
+    }
+
+    .post-text{
+      font-size:15px;
+      color:#465267;
+      margin-bottom:17px;
+    }
+
+    .post-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      padding-top:13px;
+      border-top:1px solid var(--line);
+    }
+
+    .reaction-btn{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:10px;
+      padding:7px 10px;
+      font-size:12px;
+      font-weight:800;
+      color:#596579;
+    }
+
+    .reaction-btn.active{
+      background:#fff4d7;
+      border-color:#efd48d;
+      color:#8c650c;
+    }
+
+    .comment-row{
+      display:flex;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .comment-row input{
+      flex:1;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:9px 11px;
+      outline:none;
+    }
+
+    .comment-row button{
+      border:0;
+      background:var(--navy);
+      color:white;
+      border-radius:10px;
+      padding:9px 12px;
+      font-weight:800;
+    }
+
+    .comment-list{
+      margin-top:10px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .comment{
+      font-size:12px;
+      color:#5e697b;
+      background:#f6f8fa;
+      border-radius:10px;
+      padding:8px 10px;
+    }
+
+    /* ================= STORIES ================= */
+
+    .stories{
+      background:var(--soft);
+    }
+
+    .stories-summary{
+      text-align:center;
+      color:var(--muted);
+      margin:-20px auto 30px;
+    }
+
+    .story-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .story-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:19px;
+    }
+
+    .story-head{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .story-avatar{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:white;
+      background:linear-gradient(135deg,#1b476e,#0b1d32);
+      font-size:12px;
+      font-weight:900;
+    }
+
+    .story-head strong{
+      font-size:13px;
+    }
+
+    .story-head span{
+      display:block;
+      color:#8b95a5;
+      font-size:10px;
+    }
+
+    .story-text{
+      font-size:13px;
+      color:#5b6678;
+    }
+
+    .story-label{
+      margin-top:12px;
+      display:inline-block;
+      padding:5px 8px;
+      border-radius:8px;
+      background:#fff7df;
+      color:#8b6206;
+      font-size:9px;
+      font-weight:900;
+    }
+
+    /* ================= APPLICATION ================= */
+
+    .application{
+      background:linear-gradient(135deg,#061426,#0d2c4b);
+      color:white;
+    }
+
+    .application-wrap{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:45px;
+      align-items:start;
+    }
+
+    .application-copy h2{
+      font-size:clamp(32px,4vw,52px);
+      line-height:1.08;
+      letter-spacing:-1.5px;
+      margin-bottom:16px;
+    }
+
+    .application-copy p{
+      color:rgba(255,255,255,.72);
+      margin-bottom:20px;
+    }
+
+    .application-points{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .application-point{
+      display:flex;
+      gap:10px;
+      color:rgba(255,255,255,.82);
+      font-size:14px;
+    }
+
+    .application-point b{
+      color:var(--gold2);
+    }
+
+    .application-form{
+      background:white;
+      color:var(--text);
+      border-radius:25px;
+      padding:27px;
+      box-shadow:0 25px 70px rgba(0,0,0,.25);
+    }
+
+    .form-title{
+      color:var(--navy);
+      font-size:24px;
+      margin-bottom:6px;
+    }
+
+    .form-subtitle{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:20px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .full{
+      grid-column:1/-1;
+    }
+
+    .form-label{
+      display:block;
+      color:#344054;
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .consent{
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+      font-size:11px;
+      color:var(--muted);
+      margin:14px 0;
+    }
+
+    .consent input{
+      margin-top:3px;
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    details{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:17px 19px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--navy);
+    }
+
+    details p{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#04101d;
+      color:white;
+      padding:55px 0 25px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr 1fr;
+      gap:30px;
+      padding-bottom:35px;
+      border-bottom:1px solid rgba(255,255,255,.09);
+    }
+
+    .footer-brand{
+      max-width:370px;
+    }
+
+    .footer-brand h3{
+      font-size:23px;
+      margin-bottom:8px;
+    }
+
+    .footer-brand p{
+      color:rgba(255,255,255,.58);
+      font-size:13px;
+    }
+
+    footer h4{
+      margin-bottom:12px;
+      color:var(--gold2);
+    }
+
+    footer ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    footer li,
+    footer a{
+      color:rgba(255,255,255,.62);
+      font-size:13px;
+    }
+
+    .footer-bottom{
+      padding-top:22px;
+      color:rgba(255,255,255,.4);
+      font-size:11px;
+      text-align:center;
+    }
+
+    /* ================= FLOATING ================= */
+
+    .floating{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:900;
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+    }
+
+    .float-btn{
+      width:53px;
+      height:53px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:white;
+      font-size:21px;
+      box-shadow:0 12px 30px rgba(0,0,0,.2);
+    }
+
+    .float-whatsapp{
+      background:var(--whatsapp);
+    }
+
+    .float-phone{
+      background:var(--navy);
+    }
+
+    /* ================= MODALS ================= */
+
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(2,12,22,.72);
+      backdrop-filter:blur(5px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      z-index:2000;
+    }
+
+    .modal.show{
+      display:flex;
+    }
+
+    .modal-box{
+      width:min(580px,100%);
+      max-height:90vh;
+      overflow:auto;
+      background:white;
+      border-radius:25px;
+      padding:27px;
+      position:relative;
+    }
+
+    .close{
+      position:absolute;
+      top:14px;
+      right:15px;
+      width:38px;
+      height:38px;
+      border:0;
+      border-radius:50%;
+      background:#f1f3f5;
+      color:#344054;
+      font-size:19px;
+    }
+
+    .modal-box h2{
+      color:var(--navy);
+      margin-bottom:7px;
+    }
+
+    .modal-box > p{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:20px;
+    }
+
+    .success{
+      text-align:center;
+      padding:20px 5px;
+    }
+
+    .success-icon{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      margin:0 auto 15px;
+      background:#e8fff3;
+      color:var(--green);
+      font-size:32px;
+    }
+
+    .success h2{
+      margin-bottom:8px;
+    }
+
+    /* ================= NOTIFICATION ================= */
+
+    .toast-container{
+      position:fixed;
+      right:18px;
+      top:95px;
+      z-index:3000;
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+      pointer-events:none;
+    }
+
+    .toast{
+      width:min(330px,calc(100vw - 36px));
+      background:white;
+      border:1px solid var(--line);
+      border-left:4px solid var(--gold);
+      border-radius:14px;
+      padding:13px;
+      box-shadow:0 15px 40px rgba(0,0,0,.15);
+      animation:toastIn .35s ease;
+      font-size:12px;
+    }
+
+    .toast strong{
+      color:var(--navy);
+    }
+
+    .toast span{
+      color:var(--muted);
+    }
+
+    @keyframes toastIn{
+      from{
+        transform:translateX(30px);
+        opacity:0;
+      }
+      to{
+        transform:translateX(0);
+        opacity:1;
+      }
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:1000px){
+      nav{
+        display:none;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .nav-actions .btn-outline{
+        display:none;
+      }
+
+      .steps{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .filters{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .profiles-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .feed{
+        grid-template-columns:1fr;
+      }
+
+      .story-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .application-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:650px){
+      section{
+        padding:65px 0;
+      }
+
+      .brand-text span{
+        display:none;
+      }
+
+      .nav-actions .btn-gold{
+        display:none;
+      }
+
+      .hero{
+        min-height:600px;
+      }
+
+      .hero h1{
+        letter-spacing:-2px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .steps{
+        grid-template-columns:1fr;
+      }
+
+      .filters{
+        grid-template-columns:1fr;
+      }
+
+      .profiles-grid{
+        grid-template-columns:1fr;
+      }
+
+      .profile-photo{
+        height:360px;
+      }
+
+      .story-grid{
+        grid-template-columns:1fr;
+      }
+
+      .faq{
+        grid-template-columns:1fr;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .full{
+        grid-column:auto;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .application-form{
+        padding:20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+  <div class="container nav">
+
+    <a href="#home" class="brand">
+      <div class="brand-mark">
+        <img
+          src="/assets/brand/heartbridge-global-logo-1024.png"
+          alt="HeartBridge Global"
+          onerror="this.style.display='none';this.parentElement.textContent='♥';"
+        >
+      </div>
+
+      <div class="brand-text">
+        <strong>HeartBridge Global</strong>
+        <span>Real People. Meaningful Connections.</span>
+      </div>
+    </a>
+
+    <nav id="desktopNav">
+      <a href="#home">Home</a>
+      <a href="#how">How It Works</a>
+      <a href="#matches">Discover</a>
+      <a href="#community">Community</a>
+      <a href="#stories">Stories</a>
+      <a href="#apply">Apply</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline" onclick="openNotifications()">🔔 Notifications</button>
+      <button class="btn btn-gold" onclick="openApplication()">Join HeartBridge</button>
+      <button class="menu-btn" onclick="toggleMobileNav()">☰</button>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        ❤️ HEARTBRIDGE GLOBAL
+      </div>
+
+      <h1>
+        Meet someone who
+        <span>shares your future.</span>
+      </h1>
+
+      <p>
+        Discover meaningful connections with adults from Kenya,
+        Africa, Europe, North America and beyond.
+        Take your time, learn about people and start conversations
+        with purpose.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#matches" class="btn btn-gold">
+          🔎 Discover Profiles
+        </a>
+
+        <button class="btn btn-primary" onclick="openApplication()">
+          ❤️ Create My Application
+        </button>
+      </div>
+
+      <div class="hero-note">
+        Adults 18+ only • Demo profiles are clearly identified •
+        Real member profiles should be added only with appropriate consent.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     HOW IT WORKS
+========================================================= -->
+
+<section id="how">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        SIMPLE PROCESS
+      </div>
+
+      <h2>
+        A better way to begin a connection.
+      </h2>
+
+      <p>
+        HeartBridge keeps the first step simple.
+        Explore, learn about a profile and send your application.
+      </p>
+
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Explore</h3>
+        <p>
+          Browse different adult profiles and use the filters
+          to find people who fit your preferences.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Learn</h3>
+        <p>
+          Read the person's introduction, interests,
+          location and relationship intention.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Apply</h3>
+        <p>
+          Tell HeartBridge a little about yourself and
+          what kind of connection you are looking for.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Connect</h3>
+        <p>
+          Your application can be sent directly to the
+          HeartBridge WhatsApp connection desk.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     DISCOVER
+========================================================= -->
+
+<section class="matching" id="matches">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        DISCOVER
+      </div>
+
+      <h2>
+        Find a profile that feels right.
+      </h2>
+
+      <p>
+        Search by country, region, gender, interest or name.
+      </p>
+
+    </div>
+
+
+    <div class="filters">
+
+      <div class="field">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search name, profession or interest..."
+          oninput="renderProfiles()"
+        >
+      </div>
+
+      <div class="field">
+        <select id="regionFilter" onchange="renderProfiles()">
+          <option value="">All regions</option>
+          <option value="Africa">Africa</option>
+          <option value="Europe">Europe</option>
+          <option value="North America">North America</option>
+          <option value="Oceania">Oceania</option>
+          <option value="Middle East">Middle East</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <select id="countryFilter" onchange="renderProfiles()">
+          <option value="">All countries</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <select id="genderFilter" onchange="renderProfiles()">
+          <option value="">All genders</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <select id="interestFilter" onchange="renderProfiles()">
+          <option value="">All interests</option>
+        </select>
+      </div>
+
+    </div>
+
+
+    <div class="results-bar">
+      <div class="results-count" id="resultsCount">
+        0 profiles
+      </div>
+
+      <button class="btn btn-outline" onclick="clearFilters()">
+        Reset filters
+      </button>
+    </div>
+
+
+    <div class="profiles-grid" id="profilesGrid"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     COMMUNITY FEED
+========================================================= -->
+
+<section class="community" id="community">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        COMMUNITY
+      </div>
+
+      <h2>
+        Conversations around meaningful relationships.
+      </h2>
+
+      <p>
+        A Facebook-style community area for connection,
+        encouragement and discussion.
+      </p>
+
+    </div>
+
+
+    <div class="feed">
+
+      <div class="feed-column" id="feedColumn"></div>
+
+      <div class="feed-column">
+
+        <div class="post">
+
+          <div class="post-head">
+            <div class="avatar">HB</div>
+
+            <div class="post-author">
+              <strong>HeartBridge Global</strong>
+              <span>Community update • 3 minutes ago</span>
+            </div>
+          </div>
+
+          <div class="post-text">
+            A meaningful relationship starts with honest
+            conversation, patience and respect.
+          </div>
+
+          <div class="post-actions">
+            <button class="reaction-btn" onclick="reactPost(this)">
+              ❤️ Like <span>1.8k</span>
+            </button>
+
+            <button class="reaction-btn" onclick="reactPost(this)">
+              💬 Comment <span>312</span>
+            </button>
+
+            <button class="reaction-btn" onclick="reactPost(this)">
+              🔗 Share
+            </button>
+          </div>
+
+          <div class="comment-row">
+            <input
+              type="text"
+              placeholder="Write a comment..."
+              id="communityComment"
+            >
+
+            <button onclick="addCommunityComment()">
+              Post
+            </button>
+          </div>
+
+          <div class="comment-list" id="communityComments"></div>
+
+        </div>
+
+
+        <div class="post">
+
+          <div class="post-head">
+            <div class="avatar">18+</div>
+
+            <div class="post-author">
+              <strong>HeartBridge Reminder</strong>
+              <span>Community guidelines</span>
+            </div>
+          </div>
+
+          <div class="post-text">
+            HeartBridge is for adults aged 18 and above.
+            Treat other members with respect and never
+            pressure anyone to continue a conversation.
+          </div>
+
+          <div class="post-actions">
+            <button class="reaction-btn" onclick="reactPost(this)">
+              👍 Helpful <span>7k</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     500 STORIES
+========================================================= -->
+
+<section class="stories" id="stories">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        COMMUNITY STORIES
+      </div>
+
+      <h2>
+        500 community-style stories.
+      </h2>
+
+      <p>
+        These are demonstration stories used to show the
+        community-feed experience. They are not presented
+        as verified testimonials.
+      </p>
+
+    </div>
+
+    <div class="stories-summary">
+      Showing <strong id="storyTotal">500</strong>
+      demonstration community stories.
+    </div>
+
+    <div class="story-grid" id="storyGrid"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     APPLICATION
+========================================================= -->
+
+<section class="application" id="apply">
+
+  <div class="container">
+
+    <div class="application-wrap">
+
+      <div class="application-copy">
+
+        <div class="eyebrow">
+          START YOUR JOURNEY
+        </div>
+
+        <h2>
+          Tell us what kind of connection you're looking for.
+        </h2>
+
+        <p>
+          Complete the application and your details will be
+          prepared for the HeartBridge connection desk on WhatsApp.
+        </p>
+
+        <div class="application-points">
+
+          <div class="application-point">
+            <b>✓</b>
+            <span>Adults 18 years and above.</span>
+          </div>
+
+          <div class="application-point">
+            <b>✓</b>
+            <span>Choose your preferred gender and location.</span>
+          </div>
+
+          <div class="application-point">
+            <b>✓</b>
+            <span>Tell us your relationship intention.</span>
+          </div>
+
+          <div class="application-point">
+            <b>✓</b>
+            <span>Application is prepared for WhatsApp.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <form
+        class="application-form"
+        id="applicationForm"
+        onsubmit="submitApplication(event)"
+      >
+
+        <h3 class="form-title">
+          HeartBridge Application
+        </h3>
+
+        <p class="form-subtitle">
+          Complete the details below.
+        </p>
+
+
+        <div class="form-grid">
+
+          <div>
+            <label class="form-label">Full name</label>
+            <input
+              class="field-input"
+              type="text"
+              id="appName"
+              required
+              placeholder="Your full name"
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            >
+          </div>
+
+
+          <div>
+            <label class="form-label">Age</label>
+            <input
+              type="number"
+              id="appAge"
+              min="18"
+              max="100"
+              required
+              placeholder="18+"
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            >
+          </div>
+
+
+          <div>
+            <label class="form-label">Gender</label>
+            <select
+              id="appGender"
+              required
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            >
+              <option value="">Select gender</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+
+          <div>
+            <label class="form-label">Country</label>
+            <select
+              id="appCountry"
+              required
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            >
+              <option value="">Select country</option>
+            </select>
+          </div>
+
+
+          <div>
+            <label class="form-label">Preferred gender</label>
+            <select
+              id="preferredGender"
+              required
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            >
+              <option value="">Select preference</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+              <option>No preference</option>
+            </select>
+          </div>
+
+
+          <div>
+            <label class="form-label">Preferred country</label>
+            <select
+              id="preferredCountry"
+              required
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            >
+              <option value="">Select preference</option>
+              <option>No preference</option>
+            </select>
+          </div>
+
+
+          <div>
+            <label class="form-label">WhatsApp / phone</label>
+            <input
+              type="tel"
+              id="appPhone"
+              required
+              placeholder="+254..."
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            >
+          </div>
+
+
+          <div>
+            <label class="form-label">Relationship intention</label>
+            <select
+              id="relationshipGoal"
+              required
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            >
+              <option value="">Select intention</option>
+              <option>Serious relationship</option>
+              <option>Long-term partnership</option>
+              <option>Marriage</option>
+              <option>Meaningful friendship</option>
+              <option>Open to seeing where it goes</option>
+            </select>
+          </div>
+
+
+          <div class="full">
+            <label class="form-label">Tell us about yourself</label>
+
+            <textarea
+              id="appMessage"
+              required
+              placeholder="Write a short introduction..."
+              style="width:100%;border:1px solid #e6eaf0;border-radius:14px;padding:13px"
+            ></textarea>
+          </div>
+
+        </div>
+
+
+        <label class="consent">
+          <input type="checkbox" id="appConsent" required>
+
+          <span>
+            I confirm that I am 18 or older and understand that
+            HeartBridge Global is a connection platform.
+          </span>
+        </label>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="width:100%"
+        >
+          ❤️ Submit Application
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        FAQ
+      </div>
+
+      <h2>
+        Frequently asked questions.
+      </h2>
+
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>Who can use HeartBridge?</summary>
+        <p>
+          HeartBridge is intended for adults aged 18 and above.
+        </p>
+      </details>
+
+      <details>
+        <summary>Are the profiles on this page real members?</summary>
+        <p>
+          The profiles included in this template are demonstration
+          profiles. Replace them with properly consented member
+          profiles before presenting them as real members.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I apply from another country?</summary>
+        <p>
+          Yes. The country system is designed for international
+          applications.
+        </p>
+      </details>
+
+      <details>
+        <summary>Where does my application go?</summary>
+        <p>
+          The website prepares your application and opens WhatsApp
+          to the HeartBridge connection desk.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I contact someone directly?</summary>
+        <p>
+          Use the connection process provided by HeartBridge.
+          The profile cards do not expose private member phone numbers.
+        </p>
+      </details>
+
+      <details>
+        <summary>How are profile images handled?</summary>
+        <p>
+          The production version should use images that are generated
+          specifically for the site or supplied with appropriate
+          permission and documentation.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <h3>HeartBridge Global</h3>
+        <p>
+          Real People. Meaningful Connections.
+          A modern international platform for adults
+          seeking meaningful relationships.
+        </p>
+      </div>
+
+
+      <div>
+        <h4>Explore</h4>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#matches">Discover</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#stories">Stories</a></li>
+        </ul>
+
+      </div>
+
+
+      <div>
+        <h4>Connect</h4>
+
+        <ul>
+          <li>
+            <a href="https://wa.me/254758040809" target="_blank">
+              WhatsApp
+            </a>
+          </li>
+
+          <li>
+            <a href="tel:+254758040809">
+              Call HeartBridge
+            </a>
+          </li>
+
+          <li>
+            <a href="#apply">
+              Apply
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div>
+        <h4>Guidelines</h4>
+
+        <ul>
+          <li>18+ only</li>
+          <li>Respect others</li>
+          <li>No harassment</li>
+          <li>No impersonation</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      © <span id="year"></span> HeartBridge Global.
+      All rights reserved.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     FLOATING BUTTONS
+========================================================= -->
+
+<div class="floating">
+
+  <button
+    class="float-btn float-whatsapp"
+    title="WhatsApp HeartBridge"
+    onclick="openWhatsApp()"
+  >
+    ☎
+  </button>
+
+  <button
+    class="float-btn float-phone"
+    title="Call HeartBridge"
+    onclick="callHeartBridge()"
+  >
+    ☎
+  </button>
+
+</div>
+
+
+<!-- =========================================================
+     APPLICATION MODAL
+========================================================= -->
+
+<div class="modal" id="applicationModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('applicationModal')">
+      ×
+    </button>
+
+    <h2>
+      Start your HeartBridge application
+    </h2>
+
+    <p>
+      Tell us who you are and what kind of connection you hope to find.
+    </p>
+
+    <form
+      onsubmit="submitQuickApplication(event)"
+    >
+
+      <div class="field" style="margin-bottom:11px">
+        <input
+          type="text"
+          id="quickName"
+          required
+          placeholder="Your name"
+        >
+      </div>
+
+      <div class="field" style="margin-bottom:11px">
+        <input
+          type="tel"
+          id="quickPhone"
+          required
+          placeholder="WhatsApp / phone"
+        >
+      </div>
+
+      <div class="field" style="margin-bottom:11px">
+        <select id="quickCountry" required>
+          <option value="">Your country</option>
+        </select>
+      </div>
+
+      <div class="field" style="margin-bottom:14px">
+        <textarea
+          id="quickMessage"
+          required
+          placeholder="What kind of connection are you looking for?"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="width:100%"
+      >
+        Continue to WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     SUCCESS MODAL
+========================================================= -->
+
+<div class="modal" id="successModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('successModal')">
+      ×
+    </button>
+
+    <div class="success">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <h2 id="successTitle">
+        Jambo ❤️
+      </h2>
+
+      <p id="successMessage">
+        Your application has been prepared successfully.
+      </p>
+
+      <button
+        class="btn btn-whatsapp"
+        style="width:100%"
+        onclick="openWhatsAppFromSuccess()"
+      >
+        Continue to WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION MODAL
+========================================================= -->
+
+<div class="modal" id="notificationModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeModal('notificationModal')">
+      ×
+    </button>
+
+    <h2>
+      Notifications
+    </h2>
+
+    <p>
+      HeartBridge community activity.
+    </p>
+
+    <div id="notificationList"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOASTS
+========================================================= -->
+
+<div class="toast-container" id="toastContainer"></div>
+
+
 <script>
 /* ============================================================
    HEARTBRIDGE GLOBAL
-   REAL PEOPLE. MEANINGFUL CONNECTIONS.
-   
-   PROFILE IMAGE + PROFILE DATA SYSTEM
+   NEW PROFILE DATASET
    ============================================================ */
 
 /*
-  IMPORTANT:
-  - Use only AI-generated images, user-owned images, or properly
-    licensed images approved for use on this dating website.
-  - Do NOT use random Google Images of identifiable people.
-  - Do NOT use celebrities, influencers, politicians, minors,
-    explicit images, or images with unknown licensing.
-  - Every image must belong to exactly ONE profile.
-  - Never randomly assign images after profiles are created.
+IMPORTANT:
+
+These image paths intentionally point to local website-owned assets.
+
+Place your approved/generated/consented profile images here:
+
+/assets/profiles/HBG-NEW-0001.webp
+/assets/profiles/HBG-NEW-0002.webp
+/assets/profiles/HBG-NEW-0003.webp
+...
+
+Do NOT replace them with random Google portraits.
+
+Each image belongs permanently to exactly one profile ID.
 */
 
-
-/* ============================================================
-   PROFILE DATABASE
-   ============================================================ */
 
 const profiles = [
 
   {
-    profile_id: "HBG-0001",
-    name: "Marcus",
-    gender: "Male",
-    age: 48,
-    location: "Kenya",
-    country: "Kenya",
-
-    bio:
-      "A calm and ambitious professional who enjoys meaningful conversations, travel, good food and building a peaceful future with the right person.",
-
-    interests: [
-      "Business",
-      "Travel",
-      "Fitness",
-      "Cooking"
-    ],
-
-    relationship_goal: "Serious Relationship",
-
-    image_url:
-      "assets/profiles/HBG-0001.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0001",
+    name:"Aaliyah",
+    gender:"Female",
+    age:19,
+    country:"Kenya",
+    region:"Africa",
+    location:"Nairobi, Kenya",
+    profession:"University Student",
+    bio:"A curious and ambitious young adult who enjoys books, music, nature walks and meaningful conversations.",
+    interests:["Reading","Music","Nature"],
+    relationship_goal:"Meaningful friendship",
+    image_url:"/assets/profiles/HBG-NEW-0001.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
-
   {
-    profile_id: "HBG-0002",
-    name: "Amina",
-    gender: "Female",
-    age: 31,
-    location: "Kenya",
-    country: "Kenya",
-
-    bio:
-      "A warm and creative woman who loves cooking, discovering new places and enjoying simple moments with someone genuine.",
-
-    interests: [
-      "Cooking",
-      "Travel",
-      "Music",
-      "Family"
-    ],
-
-    relationship_goal: "Long-Term Relationship",
-
-    image_url:
-      "assets/profiles/HBG-0002.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0002",
+    name:"Marcus",
+    gender:"Male",
+    age:21,
+    country:"Germany",
+    region:"Europe",
+    location:"Berlin, Germany",
+    profession:"Digital Media Student",
+    bio:"Friendly, creative and interested in photography, technology and discovering different cultures.",
+    interests:["Photography","Technology","Travel"],
+    relationship_goal:"Long-term partnership",
+    image_url:"/assets/profiles/HBG-NEW-0002.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
-
   {
-    profile_id: "HBG-0003",
-    name: "Daniel",
-    gender: "Male",
-    age: 36,
-    location: "South Africa",
-    country: "South Africa",
-
-    bio:
-      "Active, positive and adventurous. I enjoy cycling, exploring beautiful places and meeting people who value honesty and respect.",
-
-    interests: [
-      "Cycling",
-      "Adventure",
-      "Fitness",
-      "Travel"
-    ],
-
-    relationship_goal: "Serious Relationship",
-
-    image_url:
-      "assets/profiles/HBG-0003.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0003",
+    name:"Nia",
+    gender:"Female",
+    age:23,
+    country:"Tanzania",
+    region:"Africa",
+    location:"Arusha, Tanzania",
+    profession:"Fashion Assistant",
+    bio:"Warm-hearted and artistic. I enjoy creative work, cooking, weekend adventures and learning new things.",
+    interests:["Fashion","Cooking","Travel"],
+    relationship_goal:"Serious relationship",
+    image_url:"/assets/profiles/HBG-NEW-0003.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
-
   {
-    profile_id: "HBG-0004",
-    name: "Maryam",
-    gender: "Female",
-    age: 45,
-    location: "United Arab Emirates",
-    country: "UAE",
-
-    bio:
-      "Thoughtful, mature and family-oriented. I enjoy reading, learning new things and having peaceful conversations with someone sincere.",
-
-    interests: [
-      "Reading",
-      "Culture",
-      "Travel",
-      "Family"
-    ],
-
-    relationship_goal: "Marriage",
-
-    image_url:
-      "assets/profiles/HBG-0004.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0004",
+    name:"Julian",
+    gender:"Male",
+    age:25,
+    country:"Switzerland",
+    region:"Europe",
+    location:"Zurich, Switzerland",
+    profession:"Civil Engineer",
+    bio:"Calm, focused and family-oriented. I appreciate architecture, hiking and thoughtful conversations.",
+    interests:["Engineering","Hiking","Architecture"],
+    relationship_goal:"Serious relationship",
+    image_url:"/assets/profiles/HBG-NEW-0004.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
-
   {
-    profile_id: "HBG-0005",
-    name: "Ethan",
-    gender: "Male",
-    age: 39,
-    location: "Canada",
-    country: "Canada",
-
-    bio:
-      "An outdoors person who enjoys hiking, photography and discovering places away from the busy city. Looking for something genuine.",
-
-    interests: [
-      "Hiking",
-      "Photography",
-      "Nature",
-      "Travel"
-    ],
-
-    relationship_goal: "Long-Term Relationship",
-
-    image_url:
-      "assets/profiles/HBG-0005.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0005",
+    name:"Zara",
+    gender:"Female",
+    age:27,
+    country:"United Kingdom",
+    region:"Europe",
+    location:"Manchester, UK",
+    profession:"Healthcare Administrator",
+    bio:"Positive, caring and independent. I enjoy fitness, good food, music and exploring new places.",
+    interests:["Fitness","Food","Music"],
+    relationship_goal:"Long-term partnership",
+    image_url:"/assets/profiles/HBG-NEW-0005.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
-
   {
-    profile_id: "HBG-0006",
-    name: "Samuel",
-    gender: "Male",
-    age: 52,
-    location: "Kenya",
-    country: "Kenya",
-
-    bio:
-      "Mature, hardworking and peaceful. I appreciate nature, gardening, family time and building a stable future together.",
-
-    interests: [
-      "Gardening",
-      "Nature",
-      "Family",
-      "Business"
-    ],
-
-    relationship_goal: "Marriage",
-
-    image_url:
-      "assets/profiles/HBG-0006.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0006",
+    name:"Andre",
+    gender:"Male",
+    age:29,
+    country:"Canada",
+    region:"North America",
+    location:"Toronto, Canada",
+    profession:"Financial Analyst",
+    bio:"Easygoing professional who values honesty, personal growth, good conversations and weekend trips.",
+    interests:["Finance","Travel","Fitness"],
+    relationship_goal:"Marriage",
+    image_url:"/assets/profiles/HBG-NEW-0006.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
-
   {
-    profile_id: "HBG-0007",
-    name: "Kenji",
-    gender: "Male",
-    age: 28,
-    location: "Japan",
-    country: "Japan",
-
-    bio:
-      "Creative and easygoing musician who enjoys guitar, good conversations, travel and discovering new cultures.",
-
-    interests: [
-      "Music",
-      "Guitar",
-      "Travel",
-      "Photography"
-    ],
-
-    relationship_goal: "Long-Term Relationship",
-
-    image_url:
-      "assets/profiles/HBG-0007.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0007",
+    name:"Maya",
+    gender:"Female",
+    age:31,
+    country:"USA",
+    region:"North America",
+    location:"Chicago, USA",
+    profession:"Project Manager",
+    bio:"Organized at work but relaxed at heart. I enjoy art, restaurants, travel and quiet evenings.",
+    interests:["Art","Travel","Dining"],
+    relationship_goal:"Serious relationship",
+    image_url:"/assets/profiles/HBG-NEW-0007.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
-
   {
-    profile_id: "HBG-0008",
-    name: "Naomi",
-    gender: "Female",
-    age: 29,
-    location: "Ghana",
-    country: "Ghana",
-
-    bio:
-      "Friendly, ambitious and positive. I enjoy coffee dates, creative projects, music and meeting people with good hearts.",
-
-    interests: [
-      "Marketing",
-      "Music",
-      "Travel",
-      "Coffee"
-    ],
-
-    relationship_goal: "Serious Relationship",
-
-    image_url:
-      "assets/profiles/HBG-0008.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0008",
+    name:"Samuel",
+    gender:"Male",
+    age:34,
+    country:"Uganda",
+    region:"Africa",
+    location:"Kampala, Uganda",
+    profession:"Business Owner",
+    bio:"Entrepreneurial, optimistic and community-minded. I enjoy business ideas, football and family time.",
+    interests:["Business","Football","Family"],
+    relationship_goal:"Marriage",
+    image_url:"/assets/profiles/HBG-NEW-0008.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
-
   {
-    profile_id: "HBG-0009",
-    name: "David",
-    gender: "Male",
-    age: 46,
-    location: "United Arab Emirates",
-    country: "UAE",
-
-    bio:
-      "Disciplined and health-conscious with a passion for fitness, travel and personal growth. Looking for a mature and genuine connection.",
-
-    interests: [
-      "Fitness",
-      "Travel",
-      "Health",
-      "Business"
-    ],
-
-    relationship_goal: "Serious Relationship",
-
-    image_url:
-      "assets/profiles/HBG-0009.webp",
-
-    image_source:
-      "AI-generated project asset",
-
-    image_license:
-      "Approved HeartBridge Global project asset"
+    profile_id:"HBG-NEW-0009",
+    name:"Elise",
+    gender:"Female",
+    age:36,
+    country:"France",
+    region:"Europe",
+    location:"Lyon, France",
+    profession:"Interior Stylist",
+    bio:"Creative and independent with a love for beautiful spaces, cooking, art and cultural experiences.",
+    interests:["Design","Cooking","Art"],
+    relationship_goal:"Long-term partnership",
+    image_url:"/assets/profiles/HBG-NEW-0009.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   },
 
+  {
+    profile_id:"HBG-NEW-0010",
+    name:"Robert",
+    gender:"Male",
+    age:39,
+    country:"Kenya",
+    region:"Africa",
+    location:"Mombasa, Kenya",
+    profession:"Logistics Manager",
+    bio:"Responsible, social and family-oriented. I love coastal life, travel, good food and entrepreneurship.",
+    interests:["Travel","Business","Food"],
+    relationship_goal:"Marriage",
+    image_url:"/assets/profiles/HBG-NEW-0010.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
 
   {
-    profile_id: "HBG-0010",
-    name: "Brian",
-    gender: "Male",
-    age: 33,
-    location: "United States",
-    country: "USA",
+    profile_id:"HBG-NEW-0011",
+    name:"Helena",
+    gender:"Female",
+    age:42,
+    country:"Austria",
+    region:"Europe",
+    location:"Vienna, Austria",
+    profession:"School Administrator",
+    bio:"Thoughtful and dependable. I value family, culture, meaningful friendships and peaceful weekends.",
+    interests:["Culture","Family","Reading"],
+    relationship_goal:"Serious relationship",
+    image_url:"/assets/profiles/HBG-NEW-0011.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
 
-    bio:
-      "Energetic, friendly and focused. I enjoy training, exploring new restaurants and spending time with people who bring positive energy.",
+  {
+    profile_id:"HBG-NEW-0012",
+    name:"David",
+    gender:"Male",
+    age:45,
+    country:"South Africa",
+    region:"Africa",
+    location:"Cape Town, South Africa",
+    profession:"Operations Director",
+    bio:"Experienced professional who enjoys nature, golf, travel and building a balanced life.",
+    interests:["Golf","Nature","Travel"],
+    relationship_goal:"Marriage",
+    image_url:"/assets/profiles/HBG-NEW-0012.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
 
-    interests: [
-      "Fitness",
-      "Food",
-      "Travel",
-      "Sports"
-    ],
+  {
+    profile_id:"HBG-NEW-0013",
+    name:"Teresa",
+    gender:"Female",
+    age:47,
+    country:"Spain",
+    region:"Europe",
+    location:"Madrid, Spain",
+    profession:"Small Business Owner",
+    bio:"Independent, warm and optimistic. I enjoy cooking, gardening, music and discovering beautiful places.",
+    interests:["Gardening","Cooking","Music"],
+    relationship_goal:"Long-term partnership",
+    image_url:"/assets/profiles/HBG-NEW-0013.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
 
-    relationship_goal: "Long-Term Relationship",
+  {
+    profile_id:"HBG-NEW-0014",
+    name:"Richard",
+    gender:"Male",
+    age:49,
+    country:"United Kingdom",
+    region:"Europe",
+    location:"Birmingham, UK",
+    profession:"Architect",
+    bio:"Mature, calm and curious about the world. I enjoy architecture, countryside drives and good conversation.",
+    interests:["Architecture","Driving","Nature"],
+    relationship_goal:"Serious relationship",
+    image_url:"/assets/profiles/HBG-NEW-0014.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
 
-    image_url:
-      "assets/profiles/HBG-0010.webp",
+  {
+    profile_id:"HBG-NEW-0015",
+    name:"Monica",
+    gender:"Female",
+    age:51,
+    country:"Kenya",
+    region:"Africa",
+    location:"Nakuru, Kenya",
+    profession:"Education Consultant",
+    bio:"Family-oriented, cheerful and thoughtful. I enjoy reading, community activities and peaceful travel.",
+    interests:["Education","Reading","Travel"],
+    relationship_goal:"Marriage",
+    image_url:"/assets/profiles/HBG-NEW-0015.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
 
-    image_source:
-      "AI-generated project asset",
+  {
+    profile_id:"HBG-NEW-0016",
+    name:"George",
+    gender:"Male",
+    age:53,
+    country:"Canada",
+    region:"North America",
+    location:"Vancouver, Canada",
+    profession:"Construction Manager",
+    bio:"Practical, respectful and adventurous. I enjoy outdoor activities, family time and learning about cultures.",
+    interests:["Construction","Hiking","Culture"],
+    relationship_goal:"Long-term partnership",
+    image_url:"/assets/profiles/HBG-NEW-0016.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
 
-    image_license:
-      "Approved HeartBridge Global project asset"
+  {
+    profile_id:"HBG-NEW-0017",
+    name:"Patricia",
+    gender:"Female",
+    age:55,
+    country:"USA",
+    region:"North America",
+    location:"Boston, USA",
+    profession:"Nonprofit Director",
+    bio:"Compassionate and energetic. I enjoy volunteering, books, theatre and conversations that matter.",
+    interests:["Volunteering","Books","Theatre"],
+    relationship_goal:"Serious relationship",
+    image_url:"/assets/profiles/HBG-NEW-0017.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
+
+  {
+    profile_id:"HBG-NEW-0018",
+    name:"Anthony",
+    gender:"Male",
+    age:57,
+    country:"Ireland",
+    region:"Europe",
+    location:"Dublin, Ireland",
+    profession:"Business Consultant",
+    bio:"Mature, humorous and curious. I appreciate travel, history, live music and relaxed evenings.",
+    interests:["History","Travel","Music"],
+    relationship_goal:"Marriage",
+    image_url:"/assets/profiles/HBG-NEW-0018.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
+
+  {
+    profile_id:"HBG-NEW-0019",
+    name:"Diana",
+    gender:"Female",
+    age:59,
+    country:"Switzerland",
+    region:"Europe",
+    location:"Geneva, Switzerland",
+    profession:"Museum Coordinator",
+    bio:"Warm and composed with a love for art, travel, gardening and meaningful companionship.",
+    interests:["Art","Gardening","Travel"],
+    relationship_goal:"Long-term partnership",
+    image_url:"/assets/profiles/HBG-NEW-0019.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
+
+  {
+    profile_id:"HBG-NEW-0020",
+    name:"Edward",
+    gender:"Male",
+    age:61,
+    country:"Australia",
+    region:"Oceania",
+    location:"Melbourne, Australia",
+    profession:"Retired Engineer",
+    bio:"Calm, active and positive. I enjoy gardening, coastal walks, history and spending time with family.",
+    interests:["Gardening","History","Walking"],
+    relationship_goal:"Meaningful companionship",
+    image_url:"/assets/profiles/HBG-NEW-0020.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
+
+  {
+    profile_id:"HBG-NEW-0021",
+    name:"Rose",
+    gender:"Female",
+    age:63,
+    country:"Kenya",
+    region:"Africa",
+    location:"Eldoret, Kenya",
+    profession:"Community Leader",
+    bio:"Kind, sociable and family-oriented. I enjoy community work, church music, gardening and conversations.",
+    interests:["Community","Gardening","Music"],
+    relationship_goal:"Meaningful companionship",
+    image_url:"/assets/profiles/HBG-NEW-0021.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
+
+  {
+    profile_id:"HBG-NEW-0022",
+    name:"William",
+    gender:"Male",
+    age:65,
+    country:"USA",
+    region:"North America",
+    location:"Seattle, USA",
+    profession:"Retired Teacher",
+    bio:"Patient, reflective and cheerful. I enjoy books, travel, community events and sharing life experiences.",
+    interests:["Books","Travel","Teaching"],
+    relationship_goal:"Meaningful companionship",
+    image_url:"/assets/profiles/HBG-NEW-0022.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
+
+  {
+    profile_id:"HBG-NEW-0023",
+    name:"Margaret",
+    gender:"Female",
+    age:68,
+    country:"United Kingdom",
+    region:"Europe",
+    location:"Edinburgh, UK",
+    profession:"Retired Nurse",
+    bio:"Warm, caring and positive. I enjoy gardening, classical music, reading and peaceful countryside trips.",
+    interests:["Gardening","Reading","Music"],
+    relationship_goal:"Meaningful companionship",
+    image_url:"/assets/profiles/HBG-NEW-0023.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
+  },
+
+  {
+    profile_id:"HBG-NEW-0024",
+    name:"Joseph",
+    gender:"Male",
+    age:70,
+    country:"Kenya",
+    region:"Africa",
+    location:"Kisumu, Kenya",
+    profession:"Retired Administrator",
+    bio:"Friendly and grounded, with a love for family, farming, stories, music and peaceful community life.",
+    interests:["Farming","Family","Music"],
+    relationship_goal:"Meaningful companionship",
+    image_url:"/assets/profiles/HBG-NEW-0024.webp",
+    image_source:"APPROVED_IMAGE_REQUIRED",
+    image_license:"VERIFY_PERMISSION_BEFORE_PUBLISHING",
+    demo:true
   }
 
 ];
 
 
 /* ============================================================
-   PROFILE VALIDATION SYSTEM
-   ============================================================ */
+   COUNTRY DATA
+============================================================ */
 
-function validateProfiles(profileList) {
+const countries = [
+  "Kenya",
+  "Tanzania",
+  "Uganda",
+  "South Africa",
+  "Rwanda",
+  "Ghana",
+  "Nigeria",
+  "Ethiopia",
+  "Germany",
+  "Switzerland",
+  "France",
+  "United Kingdom",
+  "Austria",
+  "Spain",
+  "Ireland",
+  "Italy",
+  "Netherlands",
+  "Sweden",
+  "Norway",
+  "Belgium",
+  "Canada",
+  "USA",
+  "Australia",
+  "New Zealand",
+  "United Arab Emirates"
+];
 
-  const errors = [];
+
+/* ============================================================
+   PROFILE INTEGRITY VALIDATION
+============================================================ */
+
+function validateProfiles(){
 
   const ids = new Set();
   const names = new Set();
   const images = new Set();
 
-  profileList.forEach((profile, index) => {
+  const errors = [];
 
-    const position = index + 1;
+  profiles.forEach(profile => {
 
-    /* -------------------------------
-       Required fields
-    -------------------------------- */
+    if(!profile.profile_id){
+      errors.push("Missing profile ID");
+    }
 
-    const requiredFields = [
-      "profile_id",
-      "name",
-      "gender",
-      "age",
-      "location",
-      "bio",
-      "interests",
-      "relationship_goal",
-      "image_url"
-    ];
-
-    requiredFields.forEach(field => {
-
-      if (
-        profile[field] === undefined ||
-        profile[field] === null ||
-        profile[field] === ""
-      ) {
-
-        errors.push(
-          `Profile ${position}: Missing ${field}`
-        );
-
-      }
-
-    });
-
-
-    /* -------------------------------
-       Profile ID duplicate check
-    -------------------------------- */
-
-    if (ids.has(profile.profile_id)) {
-
-      errors.push(
-        `Duplicate profile ID: ${profile.profile_id}`
-      );
-
+    if(ids.has(profile.profile_id)){
+      errors.push("Duplicate profile ID: " + profile.profile_id);
     }
 
     ids.add(profile.profile_id);
 
 
-    /* -------------------------------
-       Name duplicate check
-    -------------------------------- */
+    const normalizedName = profile.name.trim().toLowerCase();
 
-    const normalizedName =
-      profile.name.trim().toLowerCase();
-
-    if (names.has(normalizedName)) {
-
-      errors.push(
-        `Duplicate profile name: ${profile.name}`
-      );
-
+    if(names.has(normalizedName)){
+      errors.push("Duplicate name: " + profile.name);
     }
 
     names.add(normalizedName);
 
 
-    /* -------------------------------
-       Image duplicate check
-    -------------------------------- */
-
-    if (images.has(profile.image_url)) {
-
+    if(images.has(profile.image_url)){
       errors.push(
-        `Duplicate image URL: ${profile.image_url}`
+        "Duplicate image URL: " + profile.image_url
       );
-
     }
 
     images.add(profile.image_url);
 
 
-    /* -------------------------------
-       Adult age check
-    -------------------------------- */
-
-    if (
-      typeof profile.age !== "number" ||
-      profile.age < 18
-    ) {
-
+    if(profile.age < 18){
       errors.push(
-        `${profile.name}: Profile must be an adult aged 18+`
+        profile.profile_id + " is below adult age."
       );
-
     }
 
 
-    /* -------------------------------
-       Gender validation
-    -------------------------------- */
-
-    const allowedGenders = [
-      "Male",
-      "Female"
-    ];
-
-    if (!allowedGenders.includes(profile.gender)) {
-
+    if(!profile.gender){
       errors.push(
-        `${profile.name}: Invalid gender`
+        profile.profile_id + " has no gender."
       );
-
     }
 
 
-    /* -------------------------------
-       Bio validation
-    -------------------------------- */
-
-    if (
-      typeof profile.bio !== "string" ||
-      profile.bio.length < 20
-    ) {
-
+    if(!profile.bio){
       errors.push(
-        `${profile.name}: Bio is too short`
+        profile.profile_id + " has no biography."
       );
-
     }
 
 
-    /* -------------------------------
-       Interests validation
-    -------------------------------- */
-
-    if (
-      !Array.isArray(profile.interests) ||
-      profile.interests.length === 0
-    ) {
-
+    if(!profile.relationship_goal){
       errors.push(
-        `${profile.name}: Missing interests`
+        profile.profile_id + " has no relationship goal."
       );
+    }
 
+
+    if(!profile.image_url.startsWith("/assets/profiles/")){
+      errors.push(
+        profile.profile_id +
+        " is not using a local approved-image path."
+      );
     }
 
   });
 
 
-  return {
-    valid: errors.length === 0,
-    errors
-  };
-
-}
-
-
-/* ============================================================
-   RUN VALIDATION
-   ============================================================ */
-
-const profileValidation =
-  validateProfiles(profiles);
-
-if (!profileValidation.valid) {
-
-  console.error(
-    "HEARTBRIDGE PROFILE VALIDATION FAILED:"
-  );
-
-  profileValidation.errors.forEach(error => {
-    console.error("❌", error);
-  });
-
-} else {
-
-  console.log(
-    `✅ HeartBridge profile database validated successfully.`
+  console.group(
+    "%cHeartBridge Profile Integrity",
+    "font-weight:bold;color:#123d63"
   );
 
   console.log(
-    `✅ ${profiles.length} unique profiles loaded.`
+    "Profiles:",
+    profiles.length
   );
 
-}
+  console.log(
+    "Unique IDs:",
+    ids.size
+  );
+
+  console.log(
+    "Unique names:",
+    names.size
+  );
+
+  console.log(
+    "Unique image paths:",
+    images.size
+  );
 
 
-/* ============================================================
-   PROFILE CARD GENERATOR
-   ============================================================ */
+  if(errors.length){
 
-function createProfileCard(profile) {
-
-  const card = document.createElement("article");
-
-  card.className = "profile-card";
-
-  card.dataset.profileId =
-    profile.profile_id;
-
-  card.dataset.gender =
-    profile.gender;
-
-  card.dataset.country =
-    profile.country;
-
-  card.dataset.age =
-    profile.age;
-
-
-  card.innerHTML = `
-
-    <div class="profile-image-wrapper">
-
-      <img
-        src="${profile.image_url}"
-        alt="${profile.name}, ${profile.age}, ${profile.gender}"
-        class="profile-image"
-        loading="lazy"
-        onerror="this.onerror=null;this.src='assets/profile-placeholder.webp';"
-      >
-
-    </div>
-
-    <div class="profile-content">
-
-      <h3>
-        ${escapeHTML(profile.name)},
-        ${profile.age}
-      </h3>
-
-      <p class="profile-location">
-        📍 ${escapeHTML(profile.location)}
-      </p>
-
-      <p class="profile-gender">
-        ${escapeHTML(profile.gender)}
-      </p>
-
-      <p class="profile-bio">
-        ${escapeHTML(profile.bio)}
-      </p>
-
-      <div class="profile-interests">
-
-        ${
-          profile.interests
-            .map(
-              interest =>
-                `<span>${escapeHTML(interest)}</span>`
-            )
-            .join("")
-        }
-
-      </div>
-
-      <div class="profile-goal">
-
-        ${escapeHTML(profile.relationship_goal)}
-
-      </div>
-
-      <button
-        class="connect-button"
-        onclick="openApplication('${profile.profile_id}')"
-      >
-        Connect With ${escapeHTML(profile.name)}
-      </button>
-
-    </div>
-
-  `;
-
-  return card;
-}
-
-
-/* ============================================================
-   RENDER PROFILES
-   ============================================================ */
-
-function renderProfiles(profileList = profiles) {
-
-  const container =
-    document.getElementById("profilesGrid");
-
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  profileList.forEach(profile => {
-
-    container.appendChild(
-      createProfileCard(profile)
+    console.warn(
+      "Integrity warnings:",
+      errors
     );
 
-  });
+  }else{
+
+    console.log(
+      "%cNo duplicate profile IDs, names or image paths detected.",
+      "color:#17b26a;font-weight:bold"
+    );
+
+  }
+
+  console.groupEnd();
+
+}
+
+
+validateProfiles();
+
+
+/* ============================================================
+   IMAGE FALLBACK
+============================================================ */
+
+function initials(name){
+
+  return name
+    .split(" ")
+    .map(part => part[0])
+    .join("")
+    .slice(0,2)
+    .toUpperCase();
+
+}
+
+
+function createAvatarData(name){
+
+  const text = initials(name);
+
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="700"
+         height="700"
+         viewBox="0 0 700 700">
+
+      <defs>
+        <linearGradient id="g"
+                        x1="0"
+                        x2="1"
+                        y1="0"
+                        y2="1">
+
+          <stop offset="0%" stop-color="#0d2945"/>
+          <stop offset="100%" stop-color="#1d5d91"/>
+
+        </linearGradient>
+      </defs>
+
+      <rect width="700"
+            height="700"
+            fill="url(#g)"/>
+
+      <circle
+        cx="350"
+        cy="275"
+        r="105"
+        fill="#d8e1ea"
+        opacity=".92"
+      />
+
+      <path
+        d="M150 630
+           C165 450 535 450 550 630Z"
+        fill="#d8e1ea"
+        opacity=".92"
+      />
+
+      <text
+        x="350"
+        y="675"
+        text-anchor="middle"
+        font-family="Arial"
+        font-size="58"
+        font-weight="bold"
+        fill="#ffffff">
+
+        ${text}
+
+      </text>
+
+    </svg>
+  `;
+
+  return "data:image/svg+xml;charset=UTF-8," +
+    encodeURIComponent(svg);
+
+}
+
+
+function handleProfileImageError(img, name){
+
+  img.onerror = null;
+  img.src = createAvatarData(name);
+  img.alt = name + " profile placeholder";
 
 }
 
 
 /* ============================================================
-   SAFE TEXT HANDLING
-   ============================================================ */
+   PROFILE RENDERING
+============================================================ */
 
-function escapeHTML(value) {
+function renderProfiles(){
 
-  return String(value)
-
-    .replace(/&/g, "&amp;")
-
-    .replace(/</g, "&lt;")
-
-    .replace(/>/g, "&gt;")
-
-    .replace(/"/g, "&quot;")
-
-    .replace(/'/g, "&#039;");
-}
+  const search =
+    document
+      .getElementById("searchInput")
+      .value
+      .trim()
+      .toLowerCase();
 
 
-/* ============================================================
-   PROFILE SEARCH / FILTER
-   ============================================================ */
-
-function filterProfiles({
-
-  search = "",
-  gender = "",
-  country = "",
-  minAge = 18,
-  maxAge = 100
-
-} = {}) {
-
-  const searchText =
-    search.trim().toLowerCase();
+  const region =
+    document
+      .getElementById("regionFilter")
+      .value;
 
 
-  return profiles.filter(profile => {
-
-    const matchesSearch =
-
-      !searchText ||
-
-      profile.name
-        .toLowerCase()
-        .includes(searchText) ||
-
-      profile.location
-        .toLowerCase()
-        .includes(searchText) ||
-
-      profile.bio
-        .toLowerCase()
-        .includes(searchText) ||
-
-      profile.interests.some(
-        interest =>
-          interest
-            .toLowerCase()
-            .includes(searchText)
-      );
+  const country =
+    document
+      .getElementById("countryFilter")
+      .value;
 
 
-    const matchesGender =
+  const gender =
+    document
+      .getElementById("genderFilter")
+      .value;
 
-      !gender ||
-      profile.gender === gender;
+
+  const interest =
+    document
+      .getElementById("interestFilter")
+      .value;
 
 
-    const matchesCountry =
+  const filtered = profiles.filter(profile => {
 
+    const searchable = [
+      profile.name,
+      profile.profession,
+      profile.country,
+      profile.location,
+      profile.bio,
+      ...profile.interests
+    ]
+    .join(" ")
+    .toLowerCase();
+
+
+    const searchMatch =
+      !search ||
+      searchable.includes(search);
+
+
+    const regionMatch =
+      !region ||
+      profile.region === region;
+
+
+    const countryMatch =
       !country ||
       profile.country === country;
 
 
-    const matchesAge =
+    const genderMatch =
+      !gender ||
+      profile.gender === gender;
 
-      profile.age >= minAge &&
-      profile.age <= maxAge;
+
+    const interestMatch =
+      !interest ||
+      profile.interests.includes(interest);
 
 
     return (
-
-      matchesSearch &&
-      matchesGender &&
-      matchesCountry &&
-      matchesAge
-
+      searchMatch &&
+      regionMatch &&
+      countryMatch &&
+      genderMatch &&
+      interestMatch
     );
+
+  });
+
+
+  const grid =
+    document.getElementById("profilesGrid");
+
+
+  document.getElementById("resultsCount")
+    .textContent =
+      `${filtered.length} profile${filtered.length === 1 ? "" : "s"}`;
+
+
+  if(!filtered.length){
+
+    grid.innerHTML = `
+      <div style="
+        grid-column:1/-1;
+        text-align:center;
+        padding:55px 20px;
+        background:white;
+        border:1px solid var(--line);
+        border-radius:20px;
+      ">
+        <div style="font-size:35px;margin-bottom:10px">
+          🔎
+        </div>
+
+        <h3 style="color:var(--navy);margin-bottom:5px">
+          No matching profiles
+        </h3>
+
+        <p style="color:var(--muted);font-size:13px">
+          Try changing your search or filters.
+        </p>
+      </div>
+    `;
+
+    return;
+  }
+
+
+  grid.innerHTML =
+    filtered.map(profile => profileCard(profile)).join("");
+
+}
+
+
+function profileCard(profile){
+
+  const interests =
+    profile.interests
+      .map(item => `<span class="chip">${escapeHTML(item)}</span>`)
+      .join("");
+
+
+  return `
+
+    <article class="profile-card">
+
+      <div class="profile-photo">
+
+        <img
+          src="${profile.image_url}"
+          alt="${escapeHTML(profile.name)} profile"
+          loading="lazy"
+          onerror="handleProfileImageError(this,'${escapeJS(profile.name)}')"
+        >
+
+        <div class="profile-top">
+
+          <span class="badge demo">
+            DEMO PROFILE
+          </span>
+
+          <span class="badge age">
+            ${profile.age}
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-body">
+
+        <div class="profile-name">
+
+          <h3>
+            ${escapeHTML(profile.name)}
+          </h3>
+
+        </div>
+
+
+        <div class="profile-location">
+          📍 ${escapeHTML(profile.location)}
+        </div>
+
+
+        <div class="profile-bio">
+          ${escapeHTML(profile.bio)}
+        </div>
+
+
+        <div class="goal">
+          ❤️ ${escapeHTML(profile.relationship_goal)}
+        </div>
+
+
+        <div class="chips">
+          ${interests}
+        </div>
+
+
+        <div class="profile-actions">
+
+          <button
+            class="btn btn-primary"
+            onclick="selectProfile('${profile.profile_id}')"
+          >
+            Connect
+          </button>
+
+          <button
+            class="btn btn-whatsapp"
+            onclick="contactDesk('${profile.profile_id}')"
+          >
+            WhatsApp
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  `;
+
+}
+
+
+/* ============================================================
+   FILTERS
+============================================================ */
+
+function populateFilters(){
+
+  const countryFilter =
+    document.getElementById("countryFilter");
+
+
+  const interestFilter =
+    document.getElementById("interestFilter");
+
+
+  const appCountry =
+    document.getElementById("appCountry");
+
+
+  const preferredCountry =
+    document.getElementById("preferredCountry");
+
+
+  const uniqueCountries =
+    [...new Set(
+      profiles.map(profile => profile.country)
+    )].sort();
+
+
+  const uniqueInterests =
+    [...new Set(
+      profiles.flatMap(profile => profile.interests)
+    )].sort();
+
+
+  uniqueCountries.forEach(country => {
+
+    countryFilter.innerHTML +=
+      `<option value="${escapeHTML(country)}">
+        ${escapeHTML(country)}
+      </option>`;
+
+
+    appCountry.innerHTML +=
+      `<option value="${escapeHTML(country)}">
+        ${escapeHTML(country)}
+      </option>`;
+
+
+    preferredCountry.innerHTML +=
+      `<option value="${escapeHTML(country)}">
+        ${escapeHTML(country)}
+      </option>`;
+
+  });
+
+
+  uniqueInterests.forEach(interest => {
+
+    interestFilter.innerHTML +=
+      `<option value="${escapeHTML(interest)}">
+        ${escapeHTML(interest)}
+      </option>`;
 
   });
 
@@ -750,210 +3125,1136 @@ function filterProfiles({
 
 
 /* ============================================================
-   APPLICATION SYSTEM
-   ============================================================ */
+   RESET FILTERS
+============================================================ */
 
-function openApplication(profileId) {
+function clearFilters(){
 
-  const selectedProfile =
+  document.getElementById("searchInput").value = "";
+  document.getElementById("regionFilter").value = "";
+  document.getElementById("countryFilter").value = "";
+  document.getElementById("genderFilter").value = "";
+  document.getElementById("interestFilter").value = "";
+
+  renderProfiles();
+
+}
+
+
+/* ============================================================
+   PROFILE SELECTION
+============================================================ */
+
+let selectedProfile = null;
+
+
+function selectProfile(profileId){
+
+  selectedProfile =
     profiles.find(
-      profile =>
-        profile.profile_id === profileId
+      profile => profile.profile_id === profileId
     );
 
 
-  if (!selectedProfile) {
+  if(!selectedProfile){
+    return;
+  }
 
-    console.error(
-      "Profile not found:",
-      profileId
+
+  document.getElementById("appName").value =
+    "";
+
+
+  document.getElementById("appMessage").value =
+    `I am interested in connecting with ${selectedProfile.name}.`;
+
+
+  document
+    .getElementById("apply")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+
+  setTimeout(() => {
+
+    document.getElementById("appMessage").focus();
+
+  },500);
+
+}
+
+
+/* ============================================================
+   HEARTBRIDGE CONTACT DESK
+============================================================ */
+
+const HEARTBRIDGE_PHONE =
+  "+254758040809";
+
+
+const HEARTBRIDGE_WHATSAPP =
+  "254758040809";
+
+
+function contactDesk(profileId){
+
+  const profile =
+    profiles.find(
+      item => item.profile_id === profileId
     );
+
+
+  if(!profile){
+    return;
+  }
+
+
+  const message =
+`Hello HeartBridge Global ❤️
+
+I would like to apply to connect with the profile below.
+
+Profile ID: ${profile.profile_id}
+Name: ${profile.name}
+Age: ${profile.age}
+Country: ${profile.country}
+Relationship intention: ${profile.relationship_goal}
+
+Please guide me through the connection process.`;
+
+
+  const url =
+    `https://wa.me/${HEARTBRIDGE_WHATSAPP}?text=${encodeURIComponent(message)}`;
+
+
+  window.open(url,"_blank");
+
+}
+
+
+/* ============================================================
+   APPLICATION
+============================================================ */
+
+let latestApplication = null;
+
+
+function submitApplication(event){
+
+  event.preventDefault();
+
+
+  const name =
+    document.getElementById("appName").value.trim();
+
+
+  const age =
+    Number(
+      document.getElementById("appAge").value
+    );
+
+
+  const gender =
+    document.getElementById("appGender").value;
+
+
+  const country =
+    document.getElementById("appCountry").value;
+
+
+  const preferredGender =
+    document.getElementById("preferredGender").value;
+
+
+  const preferredCountry =
+    document.getElementById("preferredCountry").value;
+
+
+  const phone =
+    document.getElementById("appPhone").value.trim();
+
+
+  const relationshipGoal =
+    document.getElementById("relationshipGoal").value;
+
+
+  const message =
+    document.getElementById("appMessage").value.trim();
+
+
+  if(age < 18){
+
+    alert(
+      "HeartBridge Global is for adults aged 18 and above."
+    );
+
+    return;
+  }
+
+
+  latestApplication = {
+
+    name,
+    age,
+    gender,
+    country,
+    preferredGender,
+    preferredCountry,
+    phone,
+    relationshipGoal,
+    message
+
+  };
+
+
+  document.getElementById("successTitle")
+    .textContent =
+      `Jambo ${name} ❤️`;
+
+
+  document.getElementById("successMessage")
+    .textContent =
+      "Your application has been submitted successfully and is ready to continue through WhatsApp.";
+
+
+  openModal("successModal");
+
+}
+
+
+function openWhatsAppFromSuccess(){
+
+  if(!latestApplication){
+    return;
+  }
+
+
+  const a =
+    latestApplication;
+
+
+  const message =
+`Jambo HeartBridge Global ❤️
+
+NEW APPLICATION
+
+Name: ${a.name}
+Age: ${a.age}
+Gender: ${a.gender}
+Country: ${a.country}
+
+Preferred gender: ${a.preferredGender}
+Preferred country: ${a.preferredCountry}
+
+WhatsApp / Phone: ${a.phone}
+
+Relationship intention:
+${a.relationshipGoal}
+
+About me:
+${a.message}
+
+Please help me continue with the HeartBridge connection process.`;
+
+
+  const url =
+    `https://wa.me/${HEARTBRIDGE_WHATSAPP}?text=${encodeURIComponent(message)}`;
+
+
+  window.open(url,"_blank");
+
+}
+
+
+function submitQuickApplication(event){
+
+  event.preventDefault();
+
+
+  const name =
+    document.getElementById("quickName").value.trim();
+
+
+  const phone =
+    document.getElementById("quickPhone").value.trim();
+
+
+  const country =
+    document.getElementById("quickCountry").value;
+
+
+  const message =
+    document.getElementById("quickMessage").value.trim();
+
+
+  latestApplication = {
+
+    name,
+    phone,
+    country,
+    message
+
+  };
+
+
+  closeModal("applicationModal");
+
+
+  document.getElementById("successTitle")
+    .textContent =
+      `Jambo ${name} ❤️`;
+
+
+  document.getElementById("successMessage")
+    .textContent =
+      "Your application has been prepared successfully.";
+
+
+  openModal("successModal");
+
+}
+
+
+/* ============================================================
+   MODALS
+============================================================ */
+
+function openModal(id){
+
+  document
+    .getElementById(id)
+    .classList.add("show");
+
+}
+
+
+function closeModal(id){
+
+  document
+    .getElementById(id)
+    .classList.remove("show");
+
+}
+
+
+function openApplication(){
+
+  openModal("applicationModal");
+
+}
+
+
+function openNotifications(){
+
+  renderNotifications();
+
+  openModal("notificationModal");
+
+}
+
+
+/* ============================================================
+   WHATSAPP
+============================================================ */
+
+function openWhatsApp(){
+
+  const url =
+    `https://wa.me/${HEARTBRIDGE_WHATSAPP}`;
+
+
+  window.open(url,"_blank");
+
+}
+
+
+/* ============================================================
+   TRUECALLER + PHONE FALLBACK
+============================================================ */
+
+function callHeartBridge(){
+
+  const number =
+    encodeURIComponent(HEARTBRIDGE_PHONE);
+
+
+  let fallbackTriggered = false;
+
+
+  const fallback = () => {
+
+    if(fallbackTriggered){
+      return;
+    }
+
+    fallbackTriggered = true;
+
+    window.location.href =
+      `tel:${HEARTBRIDGE_PHONE}`;
+
+  };
+
+
+  window.location.href =
+    `truecaller://call?number=${number}`;
+
+
+  setTimeout(fallback,900);
+
+}
+
+
+/* ============================================================
+   COMMUNITY FEED
+============================================================ */
+
+const feedPosts = [
+
+  {
+    author:"HeartBridge Global",
+    time:"3 minutes ago",
+    text:"A strong connection begins with honesty. Take time to know someone before making important decisions.",
+    likes:3240,
+    comments:186
+  },
+
+  {
+    author:"HeartBridge Community",
+    time:"11 minutes ago",
+    text:"Different countries can create beautiful connections when people communicate with patience and respect.",
+    likes:2190,
+    comments:94
+  },
+
+  {
+    author:"HeartBridge Global",
+    time:"28 minutes ago",
+    text:"Do not rush the process. The right conversation can be more valuable than a hundred quick messages.",
+    likes:4870,
+    comments:241
+  }
+
+];
+
+
+function renderFeed(){
+
+  const container =
+    document.getElementById("feedColumn");
+
+
+  container.innerHTML =
+    feedPosts.map((post,index) => `
+
+      <div class="post">
+
+        <div class="post-head">
+
+          <div class="avatar">
+            ${initials(post.author)}
+          </div>
+
+          <div class="post-author">
+
+            <strong>
+              ${escapeHTML(post.author)}
+            </strong>
+
+            <span>
+              ${post.time}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="post-text">
+          ${escapeHTML(post.text)}
+        </div>
+
+
+        <div class="post-actions">
+
+          <button
+            class="reaction-btn"
+            onclick="reactPost(this)"
+          >
+            ❤️ Like
+            <span>${post.likes}</span>
+          </button>
+
+          <button
+            class="reaction-btn"
+          >
+            💬 Comment
+            <span>${post.comments}</span>
+          </button>
+
+          <button
+            class="reaction-btn"
+          >
+            😍 Love
+          </button>
+
+          <button
+            class="reaction-btn"
+          >
+            🔗 Share
+          </button>
+
+        </div>
+
+
+        <div class="comment-row">
+
+          <input
+            type="text"
+            id="comment-${index}"
+            placeholder="Write a comment..."
+          >
+
+          <button
+            onclick="addFeedComment(${index})"
+          >
+            Post
+          </button>
+
+        </div>
+
+
+        <div
+          class="comment-list"
+          id="comments-${index}"
+        ></div>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+function reactPost(button){
+
+  button.classList.toggle("active");
+
+
+  const span =
+    button.querySelector("span");
+
+
+  if(!span){
+    return;
+  }
+
+
+  const current =
+    Number(
+      span.textContent.replace(/,/g,"")
+    );
+
+
+  span.textContent =
+    (button.classList.contains("active")
+      ? current + 1
+      : current - 1
+    ).toLocaleString();
+
+}
+
+
+function addFeedComment(index){
+
+  const input =
+    document.getElementById(
+      `comment-${index}`
+    );
+
+
+  const value =
+    input.value.trim();
+
+
+  if(!value){
+    return;
+  }
+
+
+  const list =
+    document.getElementById(
+      `comments-${index}`
+    );
+
+
+  const comment =
+    document.createElement("div");
+
+
+  comment.className =
+    "comment";
+
+
+  comment.textContent =
+    `You: ${value}`;
+
+
+  list.prepend(comment);
+
+
+  input.value = "";
+
+}
+
+
+function addCommunityComment(){
+
+  const input =
+    document.getElementById(
+      "communityComment"
+    );
+
+
+  const value =
+    input.value.trim();
+
+
+  if(!value){
+    return;
+  }
+
+
+  const list =
+    document.getElementById(
+      "communityComments"
+    );
+
+
+  const comment =
+    document.createElement("div");
+
+
+  comment.className =
+    "comment";
+
+
+  comment.textContent =
+    `You: ${value}`;
+
+
+  list.prepend(comment);
+
+
+  input.value = "";
+
+}
+
+
+/* ============================================================
+   EXACTLY 500 DEMO STORIES
+============================================================ */
+
+const storyNames = [
+
+  "Amara",
+  "Brian",
+  "Chloe",
+  "Daniel",
+  "Esther",
+  "Felix",
+  "Hannah",
+  "Isaac",
+  "Joy",
+  "Kevin",
+  "Lydia",
+  "Martin",
+  "Naomi",
+  "Oscar",
+  "Priya",
+  "Samuel",
+  "Talia",
+  "Victor",
+  "Wendy",
+  "Yusuf"
+
+];
+
+
+const storyCountries = [
+
+  "Kenya",
+  "Germany",
+  "Canada",
+  "USA",
+  "Switzerland",
+  "Uganda",
+  "Tanzania",
+  "France",
+  "United Kingdom",
+  "Australia"
+
+];
+
+
+const storyTemplates = [
+
+  "I enjoyed having a respectful conversation with someone from another country today. It reminded me that good communication matters.",
+
+  "The community discussions have encouraged me to be more open about what I want from a future relationship.",
+
+  "I believe meaningful connections take time. I appreciate being able to learn about someone before rushing into anything.",
+
+  "Meeting people with different backgrounds has made me more curious about other cultures and ways of life.",
+
+  "A good conversation can completely change your perspective. Today was a reminder to listen as much as I speak.",
+
+  "I appreciate the focus on respectful communication. It makes starting a conversation feel more comfortable.",
+
+  "I am taking my time and enjoying getting to know people naturally.",
+
+  "Different ages and backgrounds can bring very different perspectives. I enjoy reading the community stories.",
+
+  "I have learned that being clear about intentions saves everyone time and creates better conversations.",
+
+  "For me, the most important thing is kindness. Everything else can be discovered with time.",
+
+  "The international community makes this experience interesting. There are so many different cultures to learn about.",
+
+  "I am looking for someone who values honesty, patience and family.",
+
+  "Sometimes the best connection begins with a simple conversation.",
+
+  "I enjoy reading thoughtful stories from people who are also looking for meaningful companionship.",
+
+  "Respect should always come first when meeting someone new.",
+
+  "I am learning not to judge someone from a profile alone. Conversation tells you much more.",
+
+  "A serious relationship requires patience, communication and mutual effort.",
+
+  "I enjoy meeting people who have different interests from mine because there is always something new to learn.",
+
+  "My goal is not to rush. I would rather build something genuine slowly.",
+
+  "Good relationships begin when both people feel comfortable being themselves.",
+
+  "I like the idea of international connections because culture can add another beautiful dimension to a relationship.",
+
+  "I have become more confident about explaining what I am looking for.",
+
+  "There is nothing better than a calm conversation where both people feel heard.",
+
+  "I believe companionship becomes stronger when people respect each other's boundaries.",
+
+  "A person's character matters much more to me than a perfect photograph."
+
+];
+
+
+const generatedStories = [];
+
+
+for(let i = 0; i < 500; i++){
+
+  const name =
+    storyNames[i % storyNames.length];
+
+
+  const country =
+    storyCountries[
+      Math.floor(i / storyNames.length) %
+      storyCountries.length
+    ];
+
+
+  const template =
+    storyTemplates[
+      i % storyTemplates.length
+    ];
+
+
+  const storyNumber =
+    String(i + 1).padStart(3,"0");
+
+
+  const likes =
+    180 +
+    ((i * 137) % 6821);
+
+
+  generatedStories.push({
+
+    id:`STORY-${storyNumber}`,
+
+    name,
+
+    country,
+
+    text:template,
+
+    likes
+
+  });
+
+}
+
+
+function renderStories(){
+
+  const grid =
+    document.getElementById("storyGrid");
+
+
+  /*
+    Render the first 60 stories initially to keep the page fast.
+    The remaining stories are still present in generatedStories.
+  */
+
+  const visibleStories =
+    generatedStories.slice(0,60);
+
+
+  grid.innerHTML =
+    visibleStories.map(story => `
+
+      <article class="story-card">
+
+        <div class="story-head">
+
+          <div class="story-avatar">
+            ${initials(story.name)}
+          </div>
+
+          <div>
+
+            <strong>
+              ${escapeHTML(story.name)}
+            </strong>
+
+            <span>
+              ${escapeHTML(story.country)}
+              • Community story
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="story-text">
+          ${escapeHTML(story.text)}
+        </div>
+
+
+        <div
+          style="
+            margin-top:10px;
+            color:#8993a3;
+            font-size:11px;
+          "
+        >
+          ❤️ ${story.likes.toLocaleString()} reactions
+        </div>
+
+
+        <span class="story-label">
+          DEMO COMMUNITY CONTENT
+        </span>
+
+      </article>
+
+    `).join("");
+
+
+  document.getElementById("storyTotal")
+    .textContent =
+      generatedStories.length.toLocaleString();
+
+}
+
+
+console.log(
+  "Generated community stories:",
+  generatedStories.length
+);
+
+
+/* ============================================================
+   NOTIFICATIONS
+============================================================ */
+
+const notifications = [
+
+  {
+    icon:"❤️",
+    title:"New activity",
+    text:"Someone interacted with a HeartBridge community post."
+  },
+
+  {
+    icon:"🌍",
+    title:"International community",
+    text:"New conversations are happening across different countries."
+  },
+
+  {
+    icon:"💬",
+    title:"Community conversation",
+    text:"A new discussion has received reactions."
+  },
+
+  {
+    icon:"✨",
+    title:"HeartBridge update",
+    text:"Explore the latest profiles and community stories."
+  }
+
+];
+
+
+function renderNotifications(){
+
+  const list =
+    document.getElementById(
+      "notificationList"
+    );
+
+
+  list.innerHTML =
+    notifications.map(item => `
+
+      <div
+        style="
+          display:flex;
+          gap:12px;
+          padding:14px 0;
+          border-bottom:1px solid var(--line);
+        "
+      >
+
+        <div
+          style="
+            width:40px;
+            height:40px;
+            border-radius:12px;
+            background:#fff7df;
+            display:grid;
+            place-items:center;
+            flex:none;
+          "
+        >
+          ${item.icon}
+        </div>
+
+        <div>
+
+          <strong
+            style="
+              display:block;
+              color:var(--navy);
+              font-size:13px;
+            "
+          >
+            ${escapeHTML(item.title)}
+          </strong>
+
+          <span
+            style="
+              color:var(--muted);
+              font-size:12px;
+            "
+          >
+            ${escapeHTML(item.text)}
+          </span>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* ============================================================
+   LIVE TOAST NOTIFICATIONS
+============================================================ */
+
+let toastIndex = 0;
+
+
+function showToast(){
+
+  const item =
+    notifications[
+      toastIndex % notifications.length
+    ];
+
+
+  toastIndex++;
+
+
+  const container =
+    document.getElementById(
+      "toastContainer"
+    );
+
+
+  const toast =
+    document.createElement("div");
+
+
+  toast.className =
+    "toast";
+
+
+  toast.innerHTML = `
+    <strong>
+      ${item.icon} ${escapeHTML(item.title)}
+    </strong>
+    <br>
+    <span>
+      ${escapeHTML(item.text)}
+    </span>
+  `;
+
+
+  container.appendChild(toast);
+
+
+  setTimeout(() => {
+
+    toast.remove();
+
+  },5000);
+
+}
+
+
+/* ============================================================
+   MOBILE NAV
+============================================================ */
+
+function toggleMobileNav(){
+
+  const nav =
+    document.getElementById(
+      "desktopNav"
+    );
+
+
+  if(nav.style.display === "flex"){
+
+    nav.style.display = "none";
 
     return;
 
   }
 
 
-  console.log(
-    "Selected profile:",
-    selectedProfile
-  );
+  nav.style.display = "flex";
 
+  nav.style.position = "absolute";
 
-  /*
-    Your application modal can now use:
+  nav.style.top = "78px";
 
-    selectedProfile.profile_id
-    selectedProfile.name
-    selectedProfile.gender
-    selectedProfile.age
-    selectedProfile.location
-    selectedProfile.image_url
-    selectedProfile.relationship_goal
-  */
+  nav.style.left = "0";
 
+  nav.style.right = "0";
 
-  const message =
+  nav.style.background = "white";
 
-    `Hello HeartBridge Global,
+  nav.style.padding = "20px";
 
-I am interested in connecting with:
+  nav.style.flexDirection = "column";
 
-Name: ${selectedProfile.name}
-Profile ID: ${selectedProfile.profile_id}
-Age: ${selectedProfile.age}
-Gender: ${selectedProfile.gender}
-Location: ${selectedProfile.location}
-Relationship Goal: ${selectedProfile.relationship_goal}
+  nav.style.alignItems = "flex-start";
 
-I would like to know more about this connection.`;
-
-  
-  const whatsappNumber =
-    "254758040809";
-
-
-  const whatsappURL =
-
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(message);
-
-
-  window.open(
-    whatsappURL,
-    "_blank"
-  );
+  nav.style.borderBottom =
+    "1px solid var(--line)";
 
 }
 
 
 /* ============================================================
-   IMAGE INTEGRITY CHECK
-   ============================================================ */
+   ESCAPING
+============================================================ */
 
-function checkImageIntegrity() {
+function escapeHTML(value){
 
-  const imageMap = new Map();
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
-  profiles.forEach(profile => {
+}
 
-    if (imageMap.has(profile.image_url)) {
 
-      console.error(
-        "❌ IMAGE REUSED:",
-        profile.image_url,
-        "used by:",
-        imageMap.get(profile.image_url),
-        "and",
-        profile.profile_id
-      );
+function escapeJS(value){
 
-    } else {
-
-      imageMap.set(
-        profile.image_url,
-        profile.profile_id
-      );
-
-    }
-
-  });
+  return String(value)
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'")
+    .replace(/"/g,"&quot;");
 
 }
 
 
 /* ============================================================
-   GENDER / PROFILE CONSISTENCY CHECK
-   ============================================================ */
-
-function checkProfileConsistency() {
-
-  profiles.forEach(profile => {
-
-    if (
-      !profile.profile_id ||
-      !profile.name ||
-      !profile.image_url ||
-      !profile.gender ||
-      !profile.bio
-    ) {
-
-      console.error(
-        "❌ Incomplete profile:",
-        profile
-      );
-
-    }
-
-  });
-
-}
-
-
-/* ============================================================
-   START WEBSITE
-   ============================================================ */
+   GLOBAL MODAL CLICK
+============================================================ */
 
 document.addEventListener(
-  "DOMContentLoaded",
-  () => {
+  "click",
+  function(event){
 
-    renderProfiles();
+    if(
+      event.target.classList.contains("modal")
+    ){
 
-    checkImageIntegrity();
+      event.target.classList.remove("show");
 
-    checkProfileConsistency();
+    }
 
   }
 );
 
 
 /* ============================================================
-   FUTURE PROFILE EXPANSION
-   ============================================================ */
+   INITIALIZATION
+============================================================ */
 
-/*
-  TARGET:
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
 
-  300 MEN
-  200 WOMEN
-  = 500 UNIQUE HUMAN PROFILES
+    populateFilters();
+
+    renderProfiles();
+
+    renderFeed();
+
+    renderStories();
+
+    renderNotifications();
+
+    document.getElementById("year")
+      .textContent =
+        new Date().getFullYear();
 
 
-  Every future profile must follow exactly
-  the same structure:
+    setTimeout(showToast,4000);
 
-  {
-    profile_id: "HBG-XXXX",
-    name: "...",
-    gender: "Male" / "Female",
-    age: 18+,
-    location: "...",
-    country: "...",
-    bio: "...",
-    interests: [...],
-    relationship_goal: "...",
-    image_url: "assets/profiles/HBG-XXXX.webp",
-    image_source: "...",
-    image_license: "..."
+    setInterval(showToast,18000);
+
   }
+);
 
-
-  IMAGE RULE:
-
-  HBG-0001 → HBG-0001.webp
-  HBG-0002 → HBG-0002.webp
-  HBG-0003 → HBG-0003.webp
-
-  NEVER:
-
-  HBG-0001 → HBG-0002.webp
-  HBG-0002 → HBG-0001.webp
-
-
-  Once an image has been assigned to a profile,
-  that image must NEVER be assigned to another profile.
-*/
 </script>
+
+</body>
+   </html>
